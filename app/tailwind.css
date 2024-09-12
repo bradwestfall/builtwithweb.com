@@ -6,6 +6,24 @@
   view-timeline-name: --hero-container;
 }
 
+.hero-logo {
+  margin: 4rem 0 0 4rem;
+  width: 400px;
+}
+@supports (animation-timeline: --hero-container) {
+  .hero-logo {
+    position: absolute;
+    /* animation: linear hero-double-slash forwards;
+  animation-timeline: --hero-container;
+  animation-range: 50%; */
+  }
+}
+@keyframes hero-double-slash {
+  to {
+    /* transform: translateX(-600px); */
+  }
+}
+
 .hero-double-slash {
   position: absolute;
   left: -200px;
