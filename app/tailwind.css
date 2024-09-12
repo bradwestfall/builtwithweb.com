@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero {
+  view-timeline-name: --hero-container;
+}
+
+.slide-down-fade-out {
+  position: absolute;
+  left: -200px;
+  bottom: -224px;
+}
+@supports (animation-timeline: --hero-container) {
+  .slide-down-fade-out {
+    position: fixed;
+    animation: linear slide-down-fade-out forwards;
+    animation-timeline: --hero-container;
+    animation-range: 50%;
+  }
+}
+@keyframes slide-down-fade-out {
+  to {
+    transform: translateX(-600px);
+  }
+}
+
+.hero-border {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  border: 40px solid white;
+}
+
+.hero-slash-background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -4000px;
+  width: 6000px;
+
+  background: radial-gradient(circle at 70%, var(--tw-gradient-stops));
+  background-attachment: fixed;
+}
+@supports (animation-timeline: --hero-container) {
+  .hero-slash-background {
+    position: fixed;
+
+    animation: linear hero-slash-background forwards;
+    animation-timeline: --hero-container;
+    animation-range: 50%;
+  }
+}
+@keyframes hero-slash-background {
+  to {
+    width: 400px;
+    top: calc(-100%);
+    left: -65px;
+  }
+}
+
+/*
+
+this is the circle mask trick from early ideas
+@keyframes bg-shrink {
+  to {
+    clip-path: circle(300%);
+  }
+}
+
+.section-two {
+  height: 100vh;
+  background: #000;
+  clip-path: circle(0%);
+  animation: bg-shrink linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 2s;
+}
+
+*/
+
+/* @keyframes slide-left {
+  to {
+    transform: translateX(-200px);
+  }
+}
+
+.slide-left {
+  animation: slide-left linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 5s;
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.slide-right {
+  animation: slide-right linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 5s;
+}
+
+.neumorphic-box {
+  background: linear-gradient(145deg, #fefefe, #d5d5d5);
+  box-shadow: 20px 20px 60px #c9c9c9, -20px -20px 60px #ffffff;
+}
+
+.neumorphic-box-inset {
+  box-shadow: inset 20px 20px 60px #c9c9c9, inset -20px -20px 60px #ffffff;
+} */

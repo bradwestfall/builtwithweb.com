@@ -1,48 +1,82 @@
-import type { MetaFunction } from "@remix-run/node";
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+import { CenterContent } from '~/components/CenterContent'
+import { Logo } from '~/components/Logo'
+import { Slash, SlashClip, Slashes } from '~/components/Slashes'
 
 export default function Index() {
   return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+    <>
+      {/* <header className="fixed z-50 left-0 right-0 top-16 ">
+        <CenterContent>
+          <div className="flex gap-6 max-lg:flex-col">
+            <div className="lg:flex-1">left</div>
+            <nav>
+              <a href="/" className="inline-block px-6 py-3">
+                Link
+              </a>
+              <a href="/" className="inline-block px-6 py-3">
+                Link
+              </a>
+              <a href="/" className="inline-block px-6 py-3">
+                Link
+              </a>
+              <a href="/" className="inline-block px-6 py-3">
+                Link
+              </a>
+            </nav>
+          </div>
+        </CenterContent>
+      </header> */}
+
+      <section className="hero absolute inset-0 overflow-hidden z-10">
+        <div className="hero-border"></div>
+
+        <SlashClip className="hero-slash-background from-radial-center to-radial-edge" />
+
+        <div className="w-96 m-16">
+          <Logo fill="white" />
+        </div>
+
+        <div className="fixed right-20 top-20 flex justify-between ">
+          <nav className="text-white text-2xl">
+            <a href="/" className="inline-block px-6 py-3">
+              Home
+            </a>
+            <a href="/" className="inline-block px-6 py-3">
+              Services
+            </a>
+            <a href="/" className="inline-block px-6 py-3">
+              Blog
+            </a>
+            <a href="/" className="inline-block px-6 py-3">
+              Contact
+            </a>
+          </nav>
+        </div>
+
+        <Slashes className="slide-down-fade-out">
+          <Slash className="bg-white" size={30} />
+        </Slashes>
+      </section>
+
+      <section className="fixed inset-0">
+        <div className="absolute top-0 -left-[300px] w-[1050px] -rotate-[62.3deg]">
+          <Logo fill="black" />
+        </div>
+      </section>
+
+      {/* <section className="absolute inset-0 h-[200vh]">
+        <div className="sticky top-0 w-screen h-screen bg-amber-100">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe atque deleniti molestiae ullam esse ratione,
+          perspiciatis excepturi cum dolorum quisquam repellendus. Inventore doloremque explicabo ducimus dolores fugiat
+          odio corporis debitis.
+          <br />
+          <br />
+          <br />
+        </div>
+        <div className="w-screen h-screen" aria-hidden />
+      </section> */}
+
+      <div className="h-[2000px] bg-white" />
+    </>
+  )
 }
