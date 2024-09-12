@@ -53,7 +53,7 @@ export default function Index() {
           </nav>
         </div>
 
-        <Slashes className="slide-down-fade-out">
+        <Slashes className="hero-double-slash">
           <Slash className="bg-white" size={30} />
         </Slashes>
       </section>

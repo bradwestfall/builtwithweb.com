@@ -6,20 +6,20 @@
   view-timeline-name: --hero-container;
 }
 
-.slide-down-fade-out {
+.hero-double-slash {
   position: absolute;
   left: -200px;
   bottom: -224px;
 }
 @supports (animation-timeline: --hero-container) {
-  .slide-down-fade-out {
+  .hero-double-slash {
     position: fixed;
-    animation: linear slide-down-fade-out forwards;
+    animation: linear hero-double-slash forwards;
     animation-timeline: --hero-container;
     animation-range: 50%;
   }
 }
-@keyframes slide-down-fade-out {
+@keyframes hero-double-slash {
   to {
     transform: translateX(-600px);
   }
