@@ -57,20 +57,20 @@
 }
 
 .hero-slash-mask {
-  position: fixed;
-
   padding-top: 200px;
 
   mask-image: url('images/slash.svg');
   mask-repeat: no-repeat;
   mask-size: 500vw 500vw;
   mask-position: 50% 50%;
-  overflow: hidden;
+  mask-type: alpha;
 
   background-image: radial-gradient(circle at 70%, var(--tw-gradient-stops));
 }
 @supports (animation-timeline: --hero-container) {
   .hero-slash-mask {
+    position: fixed;
+    /* clip-path: polygon(0 0, 100% 0%, 75% 200%, 0% 200%); */
     animation: linear hero-slash-mask forwards;
     animation-timeline: --hero-container;
     animation-range: 50%;
@@ -79,6 +79,7 @@
 @keyframes hero-slash-mask {
   to {
     mask-position: 100% 50%;
+    /* clip-path: polygon(-150% 0, 100% 0%, 75% 200%, 0 200%); */
   }
 }
 

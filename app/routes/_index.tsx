@@ -29,6 +29,10 @@ export default function Index() {
               </a>
             </nav>
           </div>
+          <Slashes className="hero-double-slash">
+            <Slash className="bg-white w-52" />
+            <Slash className="bg-white w-52" />
+          </Slashes>
           <div className="">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, voluptatum maxime laudantium ab,
             voluptatibus temporibus asperiores iure veniam omnis assumenda, obcaecati adipisci esse. Labore quod, earum
@@ -37,11 +41,6 @@ export default function Index() {
             cum natus magnam quia aspernatur ut.
           </div>
         </div>
-
-        <Slashes className="hero-double-slash">
-          <Slash className="bg-white w-52" />
-          <Slash className="bg-white w-52" />
-        </Slashes>
       </section>
 
       {/* <div className="sticky top-20 z-index[100000] right-20 top-20 flex justify-between">
