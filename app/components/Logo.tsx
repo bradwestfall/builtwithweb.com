@@ -1,9 +1,11 @@
 type Props =
   | {
-      fill: string
+      fill: boolean
+      stroke?: never
     }
   | {
-      stroke: string
+      stroke: boolean
+      fill?: never
     }
 
 export function Logo({ stroke, fill }: Props) {
@@ -15,9 +17,9 @@ export function Logo({ stroke, fill }: Props) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <title>BUILT WITH WEB</title>
-      <g id="Page-1" stroke="none" fill={fill || 'none'} fillRule="evenodd">
-        <g transform="translate(3, 3)" strokeWidth="1" fillRule="nonzero" stroke={stroke || 'none'}>
-          <g id="BUILT" strokeWidth={stroke && '3'}>
+      <g id="Page-1" stroke="none" fill={fill ? 'currentColor' : 'transparent'} fillRule="evenodd">
+        <g transform="translate(3, 3)" strokeWidth="1" fillRule="nonzero" stroke={stroke ? 'currentColor' : undefined}>
+          <g id="BUILT" strokeWidth={stroke ? '3' : undefined}>
             <path d="M298.2,0 C327.6,0 342.3,12.4 342.3,37.2 L342.3,61.8 C342.3,79.2 337.5,90.5 327.9,95.7 C333.5,98.1 337.3,101.75 339.3,106.65 C341.3,111.55 342.3,118.2 342.3,126.6 L342.3,155.4 C342.3,180.2 327.6,192.6 298.2,192.6 L210,192.6 L209.999,83.785 L151.340426,193 L87,193 L194.234043,0 L298.2,0 Z M283.2,113.4 L261.6,113.4 L261.6,158.1 L283.2,158.1 C288.2,158.1 290.7,155.9 290.7,151.5 L290.7,120 C290.7,115.6 288.2,113.4 283.2,113.4 Z M283.2,34.5 L261.6,34.5 L261.6,78.9 L283.2,78.9 C288.2,78.9 290.7,76.7 290.7,72.3 L290.7,41.1 C290.7,36.7 288.2,34.5 283.2,34.5 Z"></path>
             <path d="M444.9,0.4 L497.4,0.4 L497.4,155.8 C497.4,180.6 482.7,193 453.3,193 L408.9,193 C379.5,193 364.8,180.6 364.8,155.8 L364.8,0.4 L417.3,0.4 L417.3,148.9 C417.3,153.3 419.8,155.5 424.8,155.5 L437.4,155.5 C442.4,155.5 444.9,153.3 444.9,148.9 L444.9,0.4 Z"></path>
             <polygon id="Path" points="521.4 0.4 573.9 34.9 573.9 193 521.4 193"></polygon>
@@ -25,7 +27,7 @@ export function Logo({ stroke, fill }: Props) {
             <polygon points="838.2 0.4 838.2 37.9 801 37.9 801 193 748.5 193 748.5 37.9 711.6 37.9 711.6 0.4"></polygon>
             <polygon id="Path" points="0 193 107.234043 0 168 0 64.3404255 193"></polygon>
           </g>
-          <g id="WITH-WEB" transform="translate(210, 219.48)" strokeWidth={stroke && '2'}>
+          <g id="WITH-WEB" transform="translate(210, 219.48)" strokeWidth={stroke ? '2' : undefined}>
             <polygon points="39.0791628 0 49.5934632 0 41.327886 38.52 29.1118491 38.52 24.7967316 15.54 20.4816141 38.52 8.26557719 38.52 0 0 11.0612871 0 14.3432075 25.92 19.5699695 0 29.9627173 0 35.1894794 25.92"></polygon>
             <polygon id="Path" points="89.09806 0 99.7339131 0 99.7339131 38.52 89.09806 38.52"></polygon>
             <polygon points="164.582228 0 164.582228 7.5 157.045967 7.5 157.045967 17.0394239 157.045967 38.52 146.410114 38.52 146.410114 7.5 138.934628 7.5 138.934628 0"></polygon>
