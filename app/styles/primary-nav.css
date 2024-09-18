@@ -1,0 +1,77 @@
+@supports (animation-timeline: --hero-container) {
+  @media (max-width: 768px) {
+    //@media screen(md) { // doesnt work
+    .primary-nav {
+      transform: translateY(400%);
+      animation: ease-out primary-nav-position forwards;
+      animation-timeline: --hero-container;
+      animation-range: 45% 60%;
+    }
+  }
+}
+@keyframes primary-nav-position {
+  to {
+    transform: translate(0);
+  }
+}
+
+.primary-nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* .primary-nav a:not(.active) {
+  opacity: 0.7;
+} */
+
+/* Black ******************/
+
+.primary-nav-black {
+  z-index: 1000;
+}
+
+.primary-nav-black a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary-nav-black {
+  padding: 1px;
+  overflow: hidden;
+}
+
+.primary-nav-black .animated-border {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  transform: translate(100%) scale(1);
+  transition: all 4s;
+
+  background: radial-gradient(
+    circle at 100% 600%,
+    black 0%,
+    black 60%,
+    theme('colors.theme-gradient-4') 80%,
+    theme('colors.theme-gradient-1') 90%,
+    rgba(255, 255, 255, 0) 95%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.primary-nav-black .nav-wrap {
+  background-color: #fff;
+}
+
+@supports (animation-timeline: --services-container) {
+  .primary-nav-black .animated-border {
+    animation: linear primary-nav-black-animated-border forwards;
+    animation-timeline: --services-container;
+    animation-range: 45% 60%;
+  }
+}
+@keyframes primary-nav-black-animated-border {
+  to {
+    transform: translate(-100%) scale(3);
+  }
+}

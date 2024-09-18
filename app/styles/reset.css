@@ -1,0 +1,68 @@
+@font-face {
+  font-family: Brush;
+  // src: url('/fonts/RolleteQakuVector-Regular.otf') format('opentype');
+
+  src: url('/fonts/Creslina/Creslina.woff2') format('woff2'), url('/fonts/Creslina/Creslina.woff') format('woff'),
+    url('/fonts/Creslina/Creslina.ttf') format('truetype'),
+    url('/fonts/Creslina/Creslina.eot') format('embedded-opentype');
+}
+
+:root {
+  --themeGradient-1: #ffd652;
+  --themeGradient-2: #ff7160;
+  --themeGradient-3: #fe488b;
+  --themeGradient-4: #d820ae;
+  --themeGradient-5: #8d2274;
+  --themeGradient: var(--themeGradient-1), var(--themeGradient-2), var(--themeGradient-3), var(--themeGradient-4);
+
+  --fontFamily: 'Quicksand', Arial, sans-serif;
+  --border: 20px;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --border: 40px;
+  }
+}
+
+@layer base {
+  .light {
+    --textColor: black;
+    --anchorColor: theme(colors.sky.500);
+    --headingColor: black;
+    color: var(--textColor);
+    font-family: var(--fontFamily);
+  }
+
+  // .dark {}
+
+  html {
+    min-height: 100vh;
+    font-weight: 300;
+    font-size: 13pt;
+  }
+
+  html,
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    /* https://twitter.com/AllThingsSmitty/status/1254151507412496384 */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  a {
+    color: var(--anchorColor);
+    text-decoration: none;
+
+    &:focus {
+      outline-color: currentColor;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

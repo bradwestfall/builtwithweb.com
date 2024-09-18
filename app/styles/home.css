@@ -1,0 +1,231 @@
+// https://x.com/jon_neal/status/1593674297624723456
+:where(html) {
+  display: grid;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.main-border {
+  position: fixed;
+  z-index: 1000;
+
+  // https://x.com/jon_neal/status/1593674297624723456
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100dvh;
+
+  // 1px offset helps mitigate aliasing issues on mobile devices
+  border: calc(var(--border) + 1px) solid white;
+  pointer-events: none;
+}
+
+.border-container {
+  top: var(--border);
+  left: var(--border);
+  width: calc(100vw - var(--border) - var(--border));
+  height: calc(100vh - var(--border) - var(--border));
+}
+
+.hero {
+  view-timeline-name: --hero-container;
+  // For a small amount of time, when we start scrolling we can see the underlying primary nav
+  // of the next section but the .hero is still over it (and transparent). To make pointer events
+  // work, we'll disable them for the hero itself but then enable them for the sub-contents of
+  // the hero (the mask which will be clipped)
+  pointer-events: none;
+}
+
+.hero-mask {
+  pointer-events: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5000px;
+  height: 5000px;
+  // The percentage determines the angle of the clip
+  clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
+  animation: linear hero-mask forwards;
+  animation-timeline: --hero-container;
+  animation-range: 20%;
+}
+
+@keyframes hero-mask {
+  to {
+    /* top-right X needs to be 100% less than previous for angle to be consistent */
+    clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
+  }
+}
+
+.hero-mask > .hero-mask-child {
+  position: absolute;
+  top: var(--border);
+  right: var(--border); // has to be `right` because the container is 5000px
+  width: calc(100vw - var(--border) - var(--border));
+  height: calc(100vh - var(--border) - var(--border));
+
+  background-image: linear-gradient(300deg, var(--themeGradient));
+}
+
+@supports (animation-timeline: --hero-container) {
+  @media (min-width: 1400px) {
+    .hero-content {
+      animation: linear hero-content-slide-up forwards;
+      animation-timeline: --hero-container;
+      animation-range: 50% 70%;
+    }
+  }
+}
+@keyframes hero-content-slide-up {
+  to {
+    transform: translateY(-300%);
+  }
+}
+
+.hero-double-slashes {
+  position: absolute;
+  left: 0;
+  top: 550px;
+  width: 500px;
+  transform: translate(-50%, 0);
+  transition: all 0.3s;
+
+  @media (min-width: 768px) {
+    width: 700px;
+  }
+  @media (min-width: 1200px) {
+    transform: translate(-25%, 0);
+  }
+}
+
+@supports (animation-timeline: --hero-container) {
+  .hero-double-slashes {
+    position: fixed;
+    animation: linear hero-double-slashes forwards;
+    animation-timeline: --hero-container;
+    animation-range: 50%;
+  }
+}
+@keyframes hero-double-slashes {
+  to {
+    transform: translate(-120%, 0);
+  }
+}
+
+/****************************************
+  Services
+*****************************************/
+
+#services {
+  > div {
+    view-timeline-name: --services-container;
+  }
+
+  .services-logo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(10vw + 900px);
+    z-index: 10;
+    transform: translate(54%, -43%) rotate(-62.3deg);
+  }
+}
+
+.paint-text {
+  font-size: calc(1rem + 5vw);
+  > span {
+    display: block;
+    position: absolute;
+  }
+  span:first-child {
+    color: black;
+  }
+  span:last-child {
+    /* transform: scale(1); */
+    background: linear-gradient(300deg, black 0, black 20%, var(--themeGradient) 40%, black 45%, black 100%);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: 100vw;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* transition: all 1s; */
+  }
+}
+// @supports (animation-timeline: --hero-container) {
+.paint-text span:last-child {
+  animation: linear paint-text forwards;
+  animation-timeline: --services-container;
+  animation-range: 36% 80%;
+}
+.paint-text {
+  transform: translateY(50px);
+  animation: linear paint-text-lift forwards;
+  animation-timeline: --services-container;
+  animation-range: 40% 80%;
+}
+// }
+@keyframes paint-text {
+  to {
+    background-position: -150vw 0;
+  }
+}
+@keyframes paint-text-lift {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*
+
+this is the circle mask trick from early ideas
+@keyframes bg-shrink {
+  to {
+    clip-path: circle(300%);
+  }
+}
+
+.section-two {
+  height: 100vh;
+  background: #000;
+  clip-path: circle(0%);
+  animation: bg-shrink linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 2s;
+}
+
+*/
+
+/* @keyframes slide-left {
+  to {
+    transform: translateX(-200px);
+  }
+}
+
+.slide-left {
+  animation: slide-left linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 5s;
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.slide-right {
+  animation: slide-right linear;
+  animation-timeline: scroll(block root);
+  animation-duration: 5s;
+}
+
+.neumorphic-box {
+  background: linear-gradient(145deg, #fefefe, #d5d5d5);
+  box-shadow: 20px 20px 60px #c9c9c9, -20px -20px 60px #ffffff;
+}
+
+.neumorphic-box-inset {
+  box-shadow: inset 20px 20px 60px #c9c9c9, inset -20px -20px 60px #ffffff;
+} */
