@@ -134,46 +134,51 @@
 
 .paint-text {
   font-size: calc(1rem + 5vw);
+
   > span {
     display: block;
     position: absolute;
   }
   span:first-child {
-    color: black;
+    color: var(--black);
   }
   span:last-child {
-    /* transform: scale(1); */
-    background: linear-gradient(300deg, black 0, black 20%, var(--themeGradient) 40%, black 45%, black 100%);
+    background: linear-gradient(
+      300deg,
+      var(--black) 0,
+      var(--black) 20%,
+      var(--themeGradient) 40%,
+      var(--black) 45%,
+      var(--black) 100%
+    );
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
     background-size: 100vw;
     background-position: 0 0;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* transition: all 1s; */
   }
 }
-// @supports (animation-timeline: --hero-container) {
-.paint-text span:last-child {
-  animation: linear paint-text forwards;
-  animation-timeline: --services-container;
-  animation-range: 36% 80%;
-}
-.paint-text {
-  transform: translateY(50px);
-  animation: linear paint-text-lift forwards;
-  animation-timeline: --services-container;
-  animation-range: 40% 80%;
-}
-// }
-@keyframes paint-text {
-  to {
-    background-position: -150vw 0;
+@supports (animation-timeline: --hero-container) {
+  .paint-text {
+    transform: translateY(50px);
+    animation: linear paint-text-lift forwards;
+    animation-timeline: --services-container;
+    animation-range: 40% 80%;
   }
-}
-@keyframes paint-text-lift {
-  to {
-    transform: translateY(0);
+  @keyframes paint-text-lift {
+    to {
+      transform: translateY(0);
+    }
+  }
+  .paint-text span:last-child {
+    animation: linear paint-text forwards;
+    animation-timeline: --services-container;
+    animation-range: 36% 80%;
+  }
+  @keyframes paint-text {
+    to {
+      background-position: -150vw 0;
+    }
   }
 }
 

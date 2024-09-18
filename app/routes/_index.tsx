@@ -15,7 +15,7 @@ export default function Index() {
 
         <div className="hero-mask text-white">
           <div className="hero-mask-child">
-            <nav className="primary-nav text-sm absolute top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
+            <nav className="primary-nav text-lg absolute top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
                 Home
               </NavLink>
@@ -34,7 +34,8 @@ export default function Index() {
               <h1 className="leading-[0.9] font-bold">
                 Let's Build
                 <br />
-                <span className="font-brush font-light inline-block scale-150 text-black">Fantastic</span> Websites
+                <span className="font-brush font-light inline-block scale-150 text-fuchsia-950/70">Fantastic</span>{' '}
+                Websites
               </h1>
               <p className="text-[0.6em] leading-tight">
                 Professional web apps{' '}
@@ -59,25 +60,26 @@ export default function Index() {
           <div className="services-logo text-stone-900">
             <Logo fill />
           </div>
-          <nav className="primary-nav-black absolute text-sm top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
+
+          <nav className="primary-nav-black absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="animated-border" />
             <div className="nav-wrap">
-              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-black">
+              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
                 Home
               </NavLink>
-              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-black">
+              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
                 Services
               </NavLink>
-              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-black">
+              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
                 Blog
               </NavLink>
-              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-black">
+              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
                 Contact
               </NavLink>
             </div>
           </nav>
 
-          <div className="paint-text absolute -top-10 left-0 text-nowrap">
+          <div className="paint-text absolute top-10 lg:-top-10 left-0 text-nowrap">
             <span>Web Apps</span>
             <span>Web Apps</span>
           </div>
