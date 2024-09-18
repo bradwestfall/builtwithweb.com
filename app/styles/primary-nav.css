@@ -60,6 +60,7 @@
 }
 
 .primary-nav-black .nav-wrap {
+  /* backdrop-filter: blur(10px); */
   background-color: #fff;
 }
 

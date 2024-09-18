@@ -21,6 +21,16 @@
   pointer-events: none;
 }
 
+// This only works for position fixed. But we recently changed the hero-mask to be only
+// fixed if we support scroll animations, otherwise it needs to be absolute. As absolute
+// these dimentions don't work
+// 🔥
+// 🔥
+// 🔥
+// 🔥
+// 🔥
+// 🔥
+
 .border-container {
   top: var(--border);
   left: var(--border);
@@ -38,19 +48,23 @@
 }
 
 .hero-mask {
-  pointer-events: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   width: 5000px;
   height: 5000px;
-  // The percentage determines the angle of the clip
-  clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
-  animation: linear hero-mask forwards;
-  animation-timeline: --hero-container;
-  animation-range: 20%;
 }
-
+@supports (animation-timeline: --hero-container) {
+  .hero-mask {
+    pointer-events: auto;
+    position: fixed;
+    // The percentage determines the angle of the clip
+    clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
+    animation: linear hero-mask forwards;
+    animation-timeline: --hero-container;
+    animation-range: 20%;
+  }
+}
 @keyframes hero-mask {
   to {
     /* top-right X needs to be 100% less than previous for angle to be consistent */
@@ -61,7 +75,9 @@
 .hero-mask > .hero-mask-child {
   position: absolute;
   top: var(--border);
-  right: var(--border); // has to be `right` because the container is 5000px
+  // has to be `right` because the container is 5000px and we want overhang
+  // to the left (which is why we have 5000 in the first place)
+  right: var(--border);
   width: calc(100vw - var(--border) - var(--border));
   height: calc(100vh - var(--border) - var(--border));
 
@@ -126,9 +142,9 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: calc(10vw + 900px);
+    width: calc(10vw + 1200px);
     z-index: 10;
-    transform: translate(54%, -43%) rotate(-62.3deg);
+    transform: translate(44%, -30%) rotate(-62.3deg);
   }
 }
 
@@ -144,16 +160,16 @@
   }
   span:last-child {
     background: linear-gradient(
-      300deg,
+      130deg,
       var(--black) 0,
       var(--black) 20%,
-      var(--themeGradient) 40%,
-      var(--black) 45%,
+      var(--themeGradient) 80%,
+      var(--black) 85%,
       var(--black) 100%
     );
     background-repeat: no-repeat;
-    background-size: 100vw;
-    background-position: 0 0;
+
+    background-position: 4em 0;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -173,7 +189,7 @@
   .paint-text span:last-child {
     animation: linear paint-text forwards;
     animation-timeline: --services-container;
-    animation-range: 36% 80%;
+    animation-range: 50% 80%;
   }
   @keyframes paint-text {
     to {
