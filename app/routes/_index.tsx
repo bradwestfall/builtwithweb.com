@@ -56,7 +56,7 @@ export default function Index() {
       </section>
 
       <section id="services" className="absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
-        <div className="sticky border-container pt-20">
+        <div className="sticky border-container">
           <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="nav-wrap">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
@@ -78,24 +78,30 @@ export default function Index() {
             <Logo fill />
           </div>
 
-          <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]">
-            <span className="text-nowrap">Web Apps</span>
-            <p className="text-[0.6em] lg:text-[0.35em]">
-              Your project deserves the best. Our goal is to create, or to help your team create, world class web apps.
-            </p>
-          </div>
+          <div className="bg-slate-200 absolute h-full flex flex-col justify-between  max-w-[800px]">
+            {/* <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]"> */}
+            <div className="glimmer-text leading-none">
+              <span className="text-nowrap leading-none">Web Apps</span>
+              <p className="pt-[0.2em] text-[0.6em] lg:text-[0.35em] leading-normal">
+                Your project deserves the best. Our goal is to create, or to help your team create, world class web
+                apps.
+              </p>
+            </div>
 
-          <div className="absolute bottom-5 left-1 right-1 md:right-auto md:w-[calc(40vw+200px)] xl:text-xl flex gap-10 md:gap-4 max-md:flex-col">
-            <ServiceCard label="Design">
-              Capture your audience with beautiful, accessible, amazing designs. It's the first impression that counts.
-            </ServiceCard>
-            <ServiceCard label="Build">
-              With experience, you'll get a huge head start. Create a tech stack that works for you for the long haul.
-            </ServiceCard>
-            <ServiceCard label="Teach">
-              Level up your team with expert knowledge. I've taught some of the biggest tech companies JavaScript,
-              React, and CSS.
-            </ServiceCard>
+            {/* <div className="absolute bottom-5 left-1 right-1 md:right-auto md:w-[calc(40vw+200px)] xl:text-xl flex gap-10 md:gap-4 max-md:flex-col"> */}
+            <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col">
+              <ServiceCard label="Design">
+                Capture your audience with beautiful, accessible, amazing designs. It's the first impression that
+                counts.
+              </ServiceCard>
+              <ServiceCard label="Build">
+                With experience, you'll get a huge head start. Create a tech stack that works for you for the long haul.
+              </ServiceCard>
+              <ServiceCard label="Teach">
+                Level up your team with expert knowledge. I've taught some of the biggest tech companies JavaScript,
+                React, and CSS.
+              </ServiceCard>
+            </div>
           </div>
         </div>
       </section>
@@ -127,7 +133,7 @@ function ServiceCard({ children, label }: { children: React.ReactNode; label: st
     'after:h-[0.3em] after:absolute after:top-0 after:left-[6em] md:after:left-[8em] after:-right-0 after:bg-theme-black after:rounded'
 
   return (
-    <div className="flex-1 flex relative bg-white" style={{ boxShadow: '0 0 0px 10px white' }}>
+    <div className="flex-1 flex relative bg-white" style={{ boxxShadow: '0 0 0px 10px white' }}>
       <div className="-translate-y-[0.4em] text-[1.4em] md:text-[2em] absolute leading-none">{label}</div>
       <div className={`border-b-[0.3em] border-r-[0.3em] border-theme-black overflow-clip ${before} ${after}`}>
         <p className="p-[1.2em] pt-[1.8em] text-[1em]">{children}</p>
