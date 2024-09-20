@@ -136,7 +136,7 @@
   font-size: max(calc(1rem + 5vw), 1rem);
 
   background: linear-gradient(
-    130deg,
+    50deg,
     var(--themeBlack) 0,
     var(--themeBlack) 45%,
     var(--themeGradient) 55%,
@@ -145,7 +145,6 @@
   );
   background-repeat: no-repeat;
   background-size: 500% 100%;
-
   background-position: 0 0;
   background-clip: text;
   -webkit-text-fill-color: transparent;

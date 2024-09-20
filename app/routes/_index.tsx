@@ -56,9 +56,8 @@ export default function Index() {
       </section>
 
       <section id="services" className="absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
-        <div className="sticky border-container pt-20 bg-white/10">
-          <nav className="primary-nav-black absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
-            <div className="animated-border" />
+        <div className="sticky border-container pt-20">
+          <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="nav-wrap">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
                 Home

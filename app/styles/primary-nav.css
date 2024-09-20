@@ -26,53 +26,46 @@
 
 /* Black ******************/
 
-.primary-nav-black {
-  z-index: 1000;
-}
-
-.primary-nav-black a {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.primary-nav-black {
+.glimmer-border-mask {
   padding: 1px;
-  overflow: hidden;
 }
 
-.primary-nav-black .animated-border {
+.glimmer-border-mask::before {
+  content: '';
   position: absolute;
   inset: 0;
-  z-index: -1;
+  border: 1px solid transparent;
 
-  transform: translate(100%) scale(1);
-  transition: all 4s;
-
-  background: radial-gradient(
-    circle at 100% 600%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 65%,
-    theme('colors.theme-gradient-4') 80%,
-    theme('colors.theme-gradient-1') 90%,
-    rgba(255, 255, 255, 0) 95%,
-    rgba(255, 255, 255, 0) 100%
+  background: linear-gradient(
+    130deg,
+    transparent 0%,
+    transparent 45%,
+    theme('colors.theme-gradient-1') 50%,
+    theme('colors.theme-gradient-4') 60%,
+    transparent 65%,
+    transparent 100%
   );
-}
 
-.primary-nav-black .nav-wrap {
-  /* backdrop-filter: blur(10px); */
-  background-color: #fff;
+  background-size: 500% 100%;
+  background-position: -100% 0;
+
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+
+  /* transform: translate(100%); */
 }
 
 @supports (animation-timeline: --services-container) {
-  .primary-nav-black .animated-border {
-    animation: linear primary-nav-black-animated-border forwards;
+  .glimmer-border-mask::before {
+    animation: linear glimmer-border-mask forwards;
     animation-timeline: --services-container;
-    animation-range: 45% 60%;
+    animation-range: 45% 90%;
   }
 }
-@keyframes primary-nav-black-animated-border {
+@keyframes glimmer-border-mask {
   to {
-    transform: translate(-100%) scale(3);
+    /* transform: translate(-100%); // scale(3); */
+    background-position: 100% 0;
   }
 }
