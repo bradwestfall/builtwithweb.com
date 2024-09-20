@@ -3,5 +3,6 @@
 @import 'tailwindcss/utilities';
 
 @import './reset';
+@import './common';
 @import './primary-nav';
 @import './home';

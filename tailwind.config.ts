@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 export default {
   content: ['./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}'],
@@ -6,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'theme-black': colors.stone['900'],
         'theme-gradient-1': '#ffd652',
         'theme-gradient-2': '#ff7160',
         'theme-gradient-3': '#fe488b',

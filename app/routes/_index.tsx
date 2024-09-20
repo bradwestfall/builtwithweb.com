@@ -46,9 +46,6 @@ export default function Index() {
                   <span className="font-brush text-fuchsia-900 inline-block scale-150">&</span> beautiful sites
                 </span>
               </p>
-              {/* <div>
-                <a href="#services">Link</a>
-              </div> */}
             </div>
 
             <div className="hero-double-slashes">
@@ -58,60 +55,58 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="services" className="absolute z-[9] inset-0 h-[210vh] overflow-clip">
-        <div className="sticky border-container bg-white">
+      <section id="services" className="absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
+        <div className="sticky border-container pt-20 bg-white/10">
           <nav className="primary-nav-black absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="animated-border" />
             <div className="nav-wrap">
-              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
+              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
                 Home
               </NavLink>
-              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
+              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
                 Services
               </NavLink>
-              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
+              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
                 Blog
               </NavLink>
-              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-stone-900">
+              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
                 Contact
               </NavLink>
             </div>
           </nav>
 
-          <div className="services-logo text-stone-900">
+          <div className="services-logo text-theme-black">
             <Logo fill />
           </div>
 
-          <div className="paint-text absolute top-10 lg:-top-5 left-0 text-nowrap">
-            <span>Web Apps</span>
-            <span>Web Apps</span>
+          <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]">
+            <span className="text-nowrap">Web Apps</span>
+            <p className="text-[0.6em] lg:text-[0.35em]">
+              Your project deserves the best. Our goal is to create, or to help your team create, world class web apps.
+            </p>
           </div>
 
-          <p className="text-4xl absolute top-52 pr-[30vw]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quia maiores nihil esse excepturi aut
-            molestiae aliquam
-          </p>
-
-          <div className="absolute bottom-5 left-2 w-[800px] flex gap-6 max-lg:flex-col">
-            <ServiceBox label="Design">
+          <div className="absolute bottom-5 left-1 right-1 md:right-auto md:w-[calc(40vw+200px)] xl:text-xl flex gap-10 md:gap-4 max-md:flex-col">
+            <ServiceCard label="Design">
               Capture your audience with beautiful, accessible, amazing designs. It's the first impression that counts.
-            </ServiceBox>
-            <ServiceBox label="Build">
-              I specialize in JavaScript applications from Node to client. I love to work with React, Remix and NextJS.
-            </ServiceBox>
-            <ServiceBox label="Teach">
-              Level up your team! I have extensive experience training the biggest tech companies in the world at{' '}
-              <a href="https://reacttraining.com">ReactTraining.com</a>.
-            </ServiceBox>
+            </ServiceCard>
+            <ServiceCard label="Build">
+              With experience, you'll get a huge head start. Create a tech stack that works for you for the long haul.
+            </ServiceCard>
+            <ServiceCard label="Teach">
+              Level up your team with expert knowledge. I've taught some of the biggest tech companies JavaScript,
+              React, and CSS.
+            </ServiceCard>
           </div>
         </div>
       </section>
 
-      <section className="absolute z-[1] inset-0 h-[610vh] overflow-clip ">
-        <div className="sticky border-container bg-gradient-to-r from-theme-gradient-3/20 via-theme-gradient-2/40 to-theme-gradient-1/40 [-webkit-mask-image:linear-gradient(to_bottom,rgba(255,255,255,1)_50%,rgba(255,255,255,0))]">
-          <div className="absolute -left-[300px] w-[1050px] -rotate-[62.3deg] z-10">
+      <section className="next mt-[150vh] md:mt-[190vh] overflow-clip">
+        <div className="sticky border-container">
+          Hello...
+          {/* <div className="absolute -left-[300px] w-[1050px] -rotate-[62.3deg] z-10">
             <Logo fill />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -120,21 +115,23 @@ export default function Index() {
           <Logo fill="black" />
         </div>
       </section> */}
-
-      <div className="h-[10000px] bg-white" />
     </>
   )
 }
 
-function ServiceBox({ children, label }: { children: React.ReactNode; label: string }) {
+function ServiceCard({ children, label }: { children: React.ReactNode; label: string }) {
+  // Left Side
   const before =
-    'before:text-4xl before:w-[6px] before:absolute before:bottom-0 before:left-0 before:top-[1em] before:bg-black before:rounded'
-  const after = 'after:h-[6px] after:absolute after:top-0 after:left-[50%] after:-right-0  after:bg-black after:rounded'
+    'before:w-[0.3em] before:absolute before:bottom-0 before:left-0 before:top-[1.9em] before:bg-theme-black before:rounded'
+  // Top
+  const after =
+    'after:h-[0.3em] after:absolute after:top-0 after:left-[6em] md:after:left-[8em] after:-right-0 after:bg-theme-black after:rounded'
+
   return (
-    <div className="flex-1 flex relative">
-      <div className="-translate-y-4 text-4xl absolute">{label}</div>
-      <div className={`border-b-[6px] border-r-[6px] border-black overflow-clip ${before} ${after}`}>
-        <p className="p-6 pt-8">{children}</p>
+    <div className="flex-1 flex relative bg-white" style={{ boxShadow: '0 0 0px 10px white' }}>
+      <div className="-translate-y-[0.4em] text-[1.4em] md:text-[2em] absolute leading-none">{label}</div>
+      <div className={`border-b-[0.3em] border-r-[0.3em] border-theme-black overflow-clip ${before} ${after}`}>
+        <p className="p-[1.2em] pt-[1.8em] text-[1em]">{children}</p>
       </div>
     </div>
   )

@@ -8,8 +8,9 @@
 }
 
 :root {
-  --black: theme('colors.stone.900');
-  --blue: theme('colors.sky.500');
+  --themeBlack: theme('colors.stone.900');
+  --themeBlue: theme('colors.sky.500');
+
   --themeGradient-1: #ffd652;
   --themeGradient-2: #ff7160;
   --themeGradient-3: #fe488b;
@@ -26,12 +27,17 @@
     --border: 40px;
   }
 }
+@media (min-width: 1700px) {
+  :root {
+    --border: 80px;
+  }
+}
 
 @layer base {
   .light {
-    --textColor: var(--black);
-    --anchorColor: var(--blue);
-    --headingColor: var(--black);
+    --textColor: var(--themeBlack);
+    --anchorColor: var(--themeBlue);
+    --headingColor: var(--themebBlack);
     color: var(--textColor);
     font-family: var(--fontFamily);
   }

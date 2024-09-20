@@ -1,33 +1,4 @@
-// export function Slash({ className }: { className?: string }) {
-//   return (
-//     <div style={{ transform: 'skew(331deg)', transformOrigin: 'bottom left' }}>
-//       <div className={`${className} aspect-[67/193]`} />
-//     </div>
-//   )
-// }
-
-// type SlashesProps = {
-//   children: React.ReactNode // Meant to be <Slash /> elements
-//   className: string
-// }
-
-// export function Slashes({ children, className }: SlashesProps) {
-//   children = Children.map(children, (child, i) => {
-//     return (
-//       <div key={i} style={{ transform: `translateX(${i * 30}%)` }}>
-//         {child}
-//       </div>
-//     )
-//   })
-
-//   return <div className={`flex ${className}`}>{children}</div>
-// }
-
-type SlashClipProps = {
-  className?: string
-}
-
-export function Slashes({ className }: SlashClipProps) {
+export function Slashes() {
   return (
     <svg
       viewBox="0 0 255 193"

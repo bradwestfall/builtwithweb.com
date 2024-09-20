@@ -1,28 +1,3 @@
-// https://x.com/jon_neal/status/1593674297624723456
-:where(html) {
-  display: grid;
-  height: 100vh;
-  height: 100dvh;
-}
-
-.main-border {
-  position: fixed;
-  z-index: 1000;
-
-  /* box-shadow: inset 0 0 100px -80px #000; */
-
-  // https://x.com/jon_neal/status/1593674297624723456
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  height: 100dvh;
-
-  // 1px offset helps mitigate aliasing issues on mobile devices
-  border: calc(var(--border) + 1px) solid white;
-  pointer-events: none;
-}
-
 // Sometimes useful to position a container within the .main-border
 .border-container {
   top: var(--border);
@@ -157,54 +132,51 @@
   }
 }
 
-.paint-text {
-  font-size: calc(1rem + 5vw);
+.glimmer-text {
+  font-size: max(calc(1rem + 5vw), 1rem);
 
-  > span {
-    display: block;
-    position: absolute;
-  }
-  span:first-child {
-    color: var(--black);
-  }
-  span:last-child {
-    background: linear-gradient(
-      130deg,
-      var(--black) 0,
-      var(--black) 20%,
-      var(--themeGradient) 80%,
-      var(--black) 85%,
-      var(--black) 100%
-    );
-    background-repeat: no-repeat;
+  background: linear-gradient(
+    130deg,
+    var(--themeBlack) 0,
+    var(--themeBlack) 45%,
+    var(--themeGradient) 55%,
+    var(--themeBlack) 56%,
+    var(--themeBlack) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 500% 100%;
 
-    background-position: 4em 0;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-@supports (animation-timeline: --hero-container) {
-  .paint-text {
-    transform: translateY(50px);
-    animation: linear paint-text-lift forwards;
+
+@supports (animation-timeline: --services-container) {
+  .glimmer-text {
+    transform: translateY(20px);
+    animation: linear glimmer-text forwards;
     animation-timeline: --services-container;
-    animation-range: 40% 80%;
+    animation-range: 30% 80%;
   }
-  @keyframes paint-text-lift {
+  @keyframes glimmer-text {
     to {
+      background-position: 100% 0;
       transform: translateY(0);
     }
   }
-  .paint-text span:last-child {
-    animation: linear paint-text forwards;
-    animation-timeline: --services-container;
-    animation-range: 50% 80%;
-  }
-  @keyframes paint-text {
-    to {
-      background-position: -150vw 0;
-    }
-  }
+}
+
+/****************************************
+  Next section
+*****************************************/
+
+.next {
+  background-image: linear-gradient(
+    58.2deg,
+    rgba(40, 91, 212, 0.73) -3%,
+    rgba(171, 53, 163, 0.45) 49.3%,
+    rgba(255, 204, 112, 0.37) 97.7%
+  );
 }
 
 /*
