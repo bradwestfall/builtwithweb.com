@@ -18,7 +18,7 @@
 }
 
 // Sometimes useful to position a container within the .main-border
-.border-container {
+.viewport-container {
   top: var(--border);
   left: var(--border);
   width: calc(100vw - var(--border) - var(--border));

@@ -9,7 +9,7 @@ export default function Index() {
     <>
       <div className="main-border" aria-hidden />
 
-      <section className="hero absolute border-container z-[10]">
+      <section className="hero absolute viewport-container z-[10]">
         <div className="text-white w-32 absolute z-20 top-7 mx-auto left-7 right-7 md:right-auto">
           <Logo fill />
         </div>
@@ -55,8 +55,8 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="services" className="absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
-        <div className="services-container">
+      <section className="services-sticky-wrap absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
+        <div className="services-body sticky viewport-container flex flex-col">
           <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="nav-wrap">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
@@ -78,7 +78,7 @@ export default function Index() {
             <Logo fill />
           </div>
 
-          <div className="services-content flex flex-col justify-between max-w-[900px] overflow-y-scroll">
+          <div className="flex-1 flex flex-col justify-between max-w-[900px] overflow-y-scroll">
             {/* <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]"> */}
             <div className="glimmer-text leading-none mt-16">
               <span className="text-nowrap leading-none">Web Apps</span>
@@ -105,7 +105,7 @@ export default function Index() {
       </section>
 
       <section className="next mt-[150vh] md:mt-[190vh] overflow-clip">
-        <div className="sticky border-container">
+        <div className="sticky viewport-container">
           Hello...
           {/* <div className="absolute -left-[300px] w-[1050px] -rotate-[62.3deg] z-10">
             <Logo fill />

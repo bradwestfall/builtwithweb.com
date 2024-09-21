@@ -89,7 +89,7 @@
   Services
 *****************************************/
 
-#services {
+.services-sticky-wrap {
   view-timeline-name: --services-container;
 
   .services-logo {
@@ -97,30 +97,9 @@
     right: 0;
     bottom: 0;
     width: calc(10vw + 1200px);
-    /* z-index: 10; */
     transform: translate(52%, -26%) rotate(-62.3deg);
   }
-
-  > .services-container {
-    position: sticky;
-    top: var(--border);
-    left: var(--border);
-    width: calc(100vw - var(--border) - var(--border));
-    min-height: calc(100vh - var(--border) - var(--border));
-    padding-bottom: var(--slant-height);
-
-    display: flex;
-    flex-direction: column;
-
-    > .services-content {
-      flex: 1;
-    }
-  }
 }
-
-/* #services + * {
-  margin-top: -150px;
-} */
 
 .glimmer-text {
   font-size: calc(1rem + 4vw);
