@@ -81,7 +81,7 @@ export default function Index() {
               <div className="services-logo text-theme-black">
                 <Logo fill />
               </div>
-              <div className="flex flex-col justify-between max-w-[900px] overflow-y-scroll">
+              <div className="flex-1 flex flex-col justify-between max-w-[900px] overflow-y-scroll">
                 {/* <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]"> */}
                 <div className="glimmer-text leading-none mt-16">
                   <span className="text-nowrap leading-none">Web Apps</span>
@@ -109,7 +109,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="next section-mask-timxxxxxxeline-container absolute z-[8] inset-0 h-[390vh] overflow-clip">
+      <section className="next section-mask-timeline-container absolute z-[8] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
         <div className="sticky viewport-container ">Hello</div>
       </section>
 

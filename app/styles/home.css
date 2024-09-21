@@ -104,20 +104,13 @@
     width: calc(10vw + 1200px);
     transform: translate(52%, -26%) rotate(-62.3deg);
   }
-
-  /* .section-mask {
-    animation-range: 10%;
-  }
-
-  .section-mask > .section-mask-inner {
-  } */
 }
 
 .glimmer-text {
   font-size: calc(1rem + 4vw);
 
   background: linear-gradient(
-    50deg,
+    120deg,
     var(--themeBlack) 0,
     var(--themeBlack) 45%,
     var(--themeGradient) 55%,
