@@ -16,3 +16,11 @@
   border: calc(var(--border) + 1px) solid white;
   pointer-events: none;
 }
+
+// Sometimes useful to position a container within the .main-border
+.border-container {
+  top: var(--border);
+  left: var(--border);
+  width: calc(100vw - var(--border) - var(--border));
+  height: calc(100vh - var(--border) - var(--border));
+}

@@ -31,7 +31,7 @@ export default function Index() {
               </NavLink>
             </nav>
 
-            <div className="hero-content absolute left-4 right-4 top-52 space-y-5 text-4xl text-center md:text-[4rem] md:text-left md:top-36 md:left-[400px] md:right-[5vw] 2xl:text-[6rem] 2xl:left-[600px]">
+            <div className="absolute left-4 right-4 top-52 space-y-5 text-4xl text-center md:top-32 lg:text-[4rem] lg:text-left lg:top-36 lg:left-[400px] lg:right-[5vw] 2xl:text-[6rem] 2xl:left-[600px]">
               <h1 className="leading-[0.9] font-bold">
                 Let's Build
                 <br />
@@ -56,7 +56,7 @@ export default function Index() {
       </section>
 
       <section id="services" className="absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
-        <div className="sticky border-container">
+        <div className="services-container">
           <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="nav-wrap">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
@@ -78,25 +78,23 @@ export default function Index() {
             <Logo fill />
           </div>
 
-          <div className="bg-slate-200 absolute h-full flex flex-col justify-between  max-w-[800px]">
+          <div className="services-content flex flex-col justify-between max-w-[900px] overflow-y-scroll">
             {/* <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]"> */}
-            <div className="glimmer-text leading-none">
+            <div className="glimmer-text leading-none mt-16">
               <span className="text-nowrap leading-none">Web Apps</span>
-              <p className="pt-[0.2em] text-[0.6em] lg:text-[0.35em] leading-normal">
-                Your project deserves the best. Our goal is to create, or to help your team create, world class web
-                apps.
+              <p className="pt-[0.2em] text-[0.5em] lg:text-[0.32em] leading-normal">
+                Your project deserves experience and quality. My experience building web sites goes back 20 years and I
+                teach React to Adobe, Microsoft, Apple, and many more.
               </p>
             </div>
 
             {/* <div className="absolute bottom-5 left-1 right-1 md:right-auto md:w-[calc(40vw+200px)] xl:text-xl flex gap-10 md:gap-4 max-md:flex-col"> */}
-            <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col">
+            <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col mb-5">
               <ServiceCard label="Design">
                 Capture your audience with beautiful, accessible, amazing designs. It's the first impression that
                 counts.
               </ServiceCard>
-              <ServiceCard label="Build">
-                With experience, you'll get a huge head start. Create a tech stack that works for you for the long haul.
-              </ServiceCard>
+              <ServiceCard label="Build">JavaScript powers the web. Let's build...</ServiceCard>
               <ServiceCard label="Teach">
                 Level up your team with expert knowledge. I've taught some of the biggest tech companies JavaScript,
                 React, and CSS.
