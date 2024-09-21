@@ -56,10 +56,10 @@
   /* transform: translate(100%); */
 }
 
-@supports (animation-timeline: --services-container) {
+@supports (animation-timeline: --mask-container) {
   .glimmer-border-mask::before {
     animation: linear glimmer-border-mask forwards;
-    animation-timeline: --services-container;
+    animation-timeline: --mask-container;
     animation-range: 45% 90%;
   }
 }

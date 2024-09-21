@@ -1,47 +1,35 @@
-/* Hero and Hero Mask Gradient ******************/
-
-.hero {
-  view-timeline-name: --hero-container;
-  // For a small amount of time, when we start scrolling we can see the underlying primary nav
-  // of the next section but the .hero is still over it (and transparent). To make pointer events
-  // work, we'll disable them for the hero itself but then enable them for the sub-contents of
-  // the hero (the mask which will be clipped)
-  pointer-events: none;
+.section-mask-timeline-container {
+  view-timeline-name: --mask-container;
 }
 
-.hero-mask {
+.section-mask {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.hero-mask > .hero-mask-child {
+.section-mask > .section-mask-inner {
   position: absolute;
   top: 0;
   right: 0;
   width: calc(100vw - var(--border) - var(--border));
   height: calc(100vh - var(--border) - var(--border));
-
-  background-image: linear-gradient(300deg, var(--themeGradient));
-
-  // Hides "double slashes"
-  overflow: hidden;
 }
 
-@supports (animation-timeline: --hero-container) {
-  .hero-mask {
+@supports (animation-timeline: --mask-container) {
+  .section-mask {
     position: fixed;
     width: 5000px;
     height: 5000px;
     pointer-events: auto;
     // The percentage determines the angle of the clip
     clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
-    animation: linear hero-mask forwards;
-    animation-timeline: --hero-container;
+    animation: linear section-mask-animation forwards;
+    animation-timeline: --mask-container;
     animation-range: 20%;
 
     // Adjust for accomodating display: flex (without animation timeline support it was absolute)
-    > .hero-mask-child {
+    > .section-mask-inner {
       top: var(--border);
       // has to be `right` because the container is 5000px and we want overhang
       // to the left (which is why we have 5000 in the first place)
@@ -49,10 +37,29 @@
     }
   }
 }
-@keyframes hero-mask {
+@keyframes section-mask-animation {
   to {
     /* top-right X needs to be 100% less than previous for angle to be consistent */
     clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
+  }
+}
+
+/****************************************
+  Hero
+*****************************************/
+
+.hero {
+  // For a small amount of time, when we start scrolling we can see the underlying primary nav
+  // of the next section but the .hero is still over it (and transparent). To make pointer events
+  // work, we'll disable them for the hero itself but then enable them for the sub-contents of
+  // the hero (the mask which will be clipped)
+  pointer-events: none;
+
+  .section-mask > div {
+    background-image: linear-gradient(300deg, var(--themeGradient));
+
+    // Hides "double slashes"
+    overflow: hidden;
   }
 }
 
@@ -71,11 +78,11 @@
   }
 }
 
-@supports (animation-timeline: --hero-container) {
+@supports (animation-timeline: --mask-container) {
   .hero-double-slashes {
     position: fixed;
     animation: linear hero-double-slashes forwards;
-    animation-timeline: --hero-container;
+    animation-timeline: --mask-container;
     animation-range: 50%;
   }
 }
@@ -89,9 +96,7 @@
   Services
 *****************************************/
 
-.services-sticky-wrap {
-  view-timeline-name: --services-container;
-
+.services {
   .services-logo {
     position: absolute;
     right: 0;
@@ -99,6 +104,13 @@
     width: calc(10vw + 1200px);
     transform: translate(52%, -26%) rotate(-62.3deg);
   }
+
+  /* .section-mask {
+    animation-range: 10%;
+  }
+
+  .section-mask > .section-mask-inner {
+  } */
 }
 
 .glimmer-text {
@@ -119,11 +131,11 @@
   -webkit-text-fill-color: transparent;
 }
 
-@supports (animation-timeline: --services-container) {
+@supports (animation-timeline: --mask-container) {
   .glimmer-text {
     /* transform: translateY(20px); */
     animation: linear glimmer-text forwards;
-    animation-timeline: --services-container;
+    animation-timeline: --mask-container;
     animation-range: 30% 80%;
   }
   @keyframes glimmer-text {
