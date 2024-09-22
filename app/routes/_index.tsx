@@ -5,13 +5,11 @@ import { Logo } from '~/components/Logo'
 import { Slashes } from '~/components/Slashes'
 
 export default function Index() {
-  const style = { '--mask-container': 'var(--hero-container)' } as React.CSSProperties
-
   return (
     <>
       <div className="main-border" aria-hidden />
 
-      <section className="hero section-mask-timeline-container viewport-container absolute z-[10]">
+      <section className="hero mask-root viewport-container absolute z-[10]">
         <div className="text-white w-32 absolute z-20 top-7 mx-auto left-7 right-7 md:right-auto">
           <Logo fill />
         </div>
@@ -57,7 +55,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="services section-mask-timeline-container absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
+      <section className="services mask-root absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
         <div className="sticky viewport-container flex flex-col">
           <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
             <div className="nav-wrap">
@@ -109,15 +107,9 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="next section-mask-timeline-container absolute z-[8] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
+      <section className="next mask-root absolute z-[8] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
         <div className="sticky viewport-container ">Hello</div>
       </section>
-
-      {/* <section className="absolute z-[1] h-full inset-0 bg-gradient-to-tr from-slate-200 to-slate-300">
-        <div className="hero-logo">
-          <Logo fill="black" />
-        </div>
-      </section> */}
     </>
   )
 }

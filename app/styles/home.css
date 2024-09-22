@@ -1,4 +1,4 @@
-.section-mask-timeline-container {
+.mask-root {
   view-timeline-name: --mask-container;
 }
 
@@ -110,7 +110,7 @@
   font-size: calc(1rem + 4vw);
 
   background: linear-gradient(
-    120deg,
+    130deg,
     var(--themeBlack) 0,
     var(--themeBlack) 45%,
     var(--themeGradient) 55%,
