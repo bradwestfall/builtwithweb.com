@@ -21,50 +21,90 @@
   height: calc(100vh - var(--border) - var(--border));
 }
 
-/////
+/****************************************
+  Border Glow
+*****************************************/
 
-// https://codepen.io/jh3y/pen/rNRdLWX
-.button-glow {
-  margin-left: 10px;
-  background-color: var(--themeBlack);
-  --border-radius: 100px;
-  --border-width: 1px;
-  padding: 1rem 2rem;
-  position: relative;
-  border-radius: var(--border-radius);
+@property --border-glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
-@keyframes loop {
-  to {
-    offset-distance: 100%;
+@keyframes border-glow-angle-rotate {
+  0% {
+    --border-glow-angle: 0deg;
+  }
+  100% {
+    --border-glow-angle: 360deg;
   }
 }
 
-[data-glow] {
-  position: absolute;
-  inset: calc(var(--border-width) * -1);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid transparent;
-  mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
-  mask-clip: padding-box, border-box;
-  mask-composite: intersect;
-  pointer-events: none;
-  /* background: theme('colors.fuchsia[950]'); */
+.border-glow {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--border-glow-angle),
+      theme('colors.sky[400]'),
+      theme('colors.sky[700]'),
+      theme('colors.sky[400]')
+    );
+    transition: all 0.2s;
+    z-index: -1;
+    animation: border-glow-angle-rotate 20s linear infinite;
+  }
+
+  &.fire::before,
+  &.fire::after {
+    background: conic-gradient(
+      from var(--border-glow-angle),
+      var(--themeGradient-1),
+      var(--themeGradient-2),
+      var(--themeGradient-3),
+      var(--themeGradient-4),
+      var(--themeGradient-3),
+      var(--themeGradient-2),
+      var(--themeGradient-1)
+    );
+  }
+
+  &::before {
+    filter: blur(10px);
+    opacity: 0.5;
+  }
 }
 
-[data-glow]::after {
-  content: '';
-  position: absolute;
-  display: inline-block;
+/* .border-glow-alt {
+  position: relative;
 
-  height: 60px;
-  aspect-ratio: 1 / 1;
-  offset-anchor: 100% 50%;
-  background: radial-gradient(circle at right, hsl(0 0% 100% / 0.75), transparent 50%),
-    radial-gradient(circle at right, var(--themeGradient) 50%, transparent);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: var(--themeGradient-3);
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--border-glow-angle),
+      var(--themeGradient-1),
+      var(--themeGradient-2),
+      var(--themeGradient-3),
+      var(--themeGradient-4),
+      var(--themeGradient-3),
+      var(--themeGradient-2),
+      var(--themeGradient-1)
+    );
+    z-index: -1;
+    animation: border-glow-angle-rotate 20s linear infinite;
+  }
 
-  /* offset-path: rect(0 100% 100% 0 round var(--border-radius)); */
-  offset-path: rect(0 100% 100% 0 round 60px);
-  // -webkit-animation: loop calc(var(--speed) * 1s) infinite linear;
-  animation: loop 12s infinite linear;
-}
+  &::before {
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+} */

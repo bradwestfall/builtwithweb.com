@@ -39,7 +39,7 @@
   }
   @keyframes section-mask-animation {
     to {
-      /* top-right X needs to be 100% less than previous for angle to be consistent */
+      // top-right X needs to be 100% less than previous for angle to be consistent
       clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
     }
   }
@@ -104,7 +104,7 @@
   z-index: -1;
   inset: 0;
 
-  background: linear-gradient(to right, rgb(56 189 248 / 29%), rgb(216 32 174 / 26%));
+  background: linear-gradient(to right, rgb(56 189 248 / 29%), rgb(216 32 174 / 12%));
   -webkit-mask-image: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 5%,
@@ -114,6 +114,7 @@
 }
 
 .services-logo {
+  display: none;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -166,17 +167,21 @@
 }
 
 .services-glimmer-text {
-  font-size: calc(1rem + 4vw);
+  h1 {
+    font-size: calc(1rem + 4vw);
+  }
 
   background: linear-gradient(
     130deg,
+    white 30%,
     var(--themeGradient-1),
     var(--themeGradient-2),
     var(--themeGradient-3),
-    theme('colors.sky[400]')
+    white 60%,
+    white
   );
   background-repeat: no-repeat;
-  background-size: 500% 100%;
+  background-size: 300% 100%;
   background-position: 0 0;
   background-clip: text;
   -webkit-text-fill-color: transparent;

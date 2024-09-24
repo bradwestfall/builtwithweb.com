@@ -3,7 +3,25 @@ import { NavLink } from '@remix-run/react'
 
 import { Logo } from '~/components/Logo'
 import { Slashes } from '~/components/Slashes'
-import { Typewriter } from '~/components/Typewriter'
+
+function PrimaryNavLinks() {
+  return (
+    <>
+      <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
+        Home
+      </NavLink>
+      <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
+        Services
+      </NavLink>
+      <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
+        Blog
+      </NavLink>
+      <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
+        Contact
+      </NavLink>
+    </>
+  )
+}
 
 export default function Index() {
   return (
@@ -18,18 +36,7 @@ export default function Index() {
         <div className="section-mask text-white">
           <div className="section-mask-inner">
             <nav className="primary-nav">
-              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
-                Home
-              </NavLink>
-              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
-                Services
-              </NavLink>
-              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
-                Blog
-              </NavLink>
-              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
-                Contact
-              </NavLink>
+              <PrimaryNavLinks />
             </nav>
 
             <div className="absolute left-4 right-4 top-52 space-y-5 text-4xl text-center md:top-32 lg:text-[4rem] lg:text-left lg:top-36 lg:left-[400px] lg:right-[5vw] 2xl:text-[6rem] 2xl:left-[600px]">
@@ -56,60 +63,42 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="services mask-root absolute z-[8] inset-0 h-[170vh] md:h-[200vh] overflow-clip text-white">
+      <section className="services mask-root absolute z-[8] inset-0 h-[200vh] overflow-clip text-white">
         <div className="sticky viewport-container flex flex-col">
-          <nav className="z-[10000] primary-nav primary-nav-glimmer">
-            <div className="nav-wrap">
-              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
-                Home
-              </NavLink>
-              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
-                Services
-              </NavLink>
-              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
-                Blog
-              </NavLink>
-              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
-                Contact
-              </NavLink>
-            </div>
+          <nav className="z-10 primary-nav primary-nav-glimmer">
+            <PrimaryNavLinks />
           </nav>
 
           <div className="section-mask bg-black">
-            <div className="section-mask-inner pl-10 flex flex-col [perspective:800px]">
-              <div className="services-dashboard" />
+            <div className="section-mask-inner px-3 md:px-12 pb-12 flex flex-col [perspective:800px]">
+              {/* <div className="services-dashboard" /> */}
               <div className="services-background" />
 
               <div className="services-logo text-current">
                 <Logo fill />
               </div>
 
-              <div className="flex-1 flex flex-col justify-between max-w-[900px] overflow-y-scroll">
+              <div className="flex-1 flex flex-col justify-between max-w-[900px]">
                 <div className="services-glimmer-text leading-none mt-16">
-                  <span className="text-nowrap leading-none">Web Apps</span>
-                  <p className="pt-[0.2em] text-[0.5em] lg:text-[0.32em] leading-normal">
-                    Your project deserves experience and quality. My experience building web sites goes back 20 years
-                    and I teach React to Adobe, Microsoft, Apple, and many more.
+                  <h1 className="text-nowrap leading-none">Building Web Apps</h1>
+                  <p className="pt-[0.2em] text-lg md:text-3xl leading-normal">
+                    Whether you need hands-on development or guidance, my goal is to assist your project with the
+                    highest degree of quality and craftsmanship.
                   </p>
                 </div>
 
-                <div className="h-36">
-                  <button className="button-glow">
-                    <span data-glow />
-                    More on Services
-                  </button>
-
-                  <br />
-                  <br />
-                  <br />
-
-                  <span className="text-xl opacity-15">
+                <div className="">
+                  <div className="flex gap-3 max-md:flex-col md:gap-6">
+                    <button className="button-shape border-glow fire">My Skillsets</button>
+                    <button className="button-shape border-glow">Consulting & Training</button>
+                  </div>
+                  {/* <span className="text-xl opacity-15">
                     $ npm install{' '}
                     <Typewriter
                       list={['react', 'react-router-dom', 'vite', 'remix', 'zod', 'typescript', 'tailwind']}
                     />
                     <span className="inline-block h-[1em] w-[0.6em] border translate-y-1 [translate-x: 8em]" />
-                  </span>
+                  </span> */}
                 </div>
 
                 {/* <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col mb-10">
