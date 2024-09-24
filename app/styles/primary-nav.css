@@ -1,10 +1,29 @@
-@supports (animation-timeline: --hero-container) {
+.primary-nav {
+  // For the glimmer and non-glimmer version to overlap correctly
+  padding: 1px;
+
+  font-size: 0.9em;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+
+  @media (min-width: 500px) {
+    font-size: 1.2em;
+  }
+  @media (min-width: 768px) {
+    left: auto;
+    top: 10px;
+  }
+}
+
+@supports (animation-timeline: --mask-container) {
   @media (max-width: 768px) {
-    //@media screen(md) { // doesnt work
-    .primary-nav {
+    .hero .primary-nav {
       transform: translateY(400%);
       animation: ease-out primary-nav-position forwards;
-      animation-timeline: --hero-container;
+      animation-timeline: --mask-container;
       animation-range: 45% 60%;
     }
   }
@@ -20,21 +39,12 @@
   font-weight: 500;
 }
 
-/* .primary-nav a:not(.active) {
-  opacity: 0.7;
-} */
-
-/* Black ******************/
-
-.glimmer-border-mask {
-  padding: 1px;
-}
-
-.glimmer-border-mask::before {
+.primary-nav-glimmer::before {
   content: '';
   position: absolute;
   inset: 0;
   border: 1px solid transparent;
+  z-index: -1;
 
   background: linear-gradient(
     130deg,
@@ -46,26 +56,23 @@
     transparent 100%
   );
 
-  background-size: 500% 100%;
-  background-position: -100% 0;
+  background-size: 220% 100%;
+  background-position: -300% 0;
 
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
-
-  /* transform: translate(100%); */
 }
 
 @supports (animation-timeline: --mask-container) {
-  .glimmer-border-mask::before {
-    animation: linear glimmer-border-mask forwards;
+  .primary-nav-glimmer::before {
+    animation: linear primary-nav-glimmer forwards;
     animation-timeline: --mask-container;
-    animation-range: 45% 90%;
+    animation-range: 30% 90%;
   }
 }
-@keyframes glimmer-border-mask {
+@keyframes primary-nav-glimmer {
   to {
-    /* transform: translate(-100%); // scale(3); */
-    background-position: 100% 0;
+    background-position: 150% 0;
   }
 }

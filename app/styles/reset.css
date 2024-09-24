@@ -15,7 +15,8 @@
   --themeGradient-2: #ff7160;
   --themeGradient-3: #fe488b;
   --themeGradient-4: #d820ae;
-  --themeGradient-5: #8d2274;
+  // --themeGradient-5: #8d2274; // pretty much same as text-fuchsia-900
+
   --themeGradient: var(--themeGradient-1), var(--themeGradient-2), var(--themeGradient-3), var(--themeGradient-4);
 
   --fontFamily: 'Quicksand', Arial, sans-serif;

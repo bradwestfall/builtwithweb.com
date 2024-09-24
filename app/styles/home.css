@@ -25,6 +25,7 @@
     // The percentage determines the angle of the clip
     clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
     animation: linear section-mask-animation forwards;
+    animation-duration: 1ms;
     animation-timeline: --mask-container;
     animation-range: 20%;
 
@@ -36,11 +37,11 @@
       right: var(--border);
     }
   }
-}
-@keyframes section-mask-animation {
-  to {
-    /* top-right X needs to be 100% less than previous for angle to be consistent */
-    clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
+  @keyframes section-mask-animation {
+    to {
+      /* top-right X needs to be 100% less than previous for angle to be consistent */
+      clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
+    }
   }
 }
 
@@ -59,7 +60,7 @@
     background-image: linear-gradient(300deg, var(--themeGradient));
 
     // Hides "double slashes"
-    overflow: hidden;
+    overflow: clip;
   }
 }
 
@@ -85,10 +86,10 @@
     animation-timeline: --mask-container;
     animation-range: 50%;
   }
-}
-@keyframes hero-double-slashes {
-  to {
-    transform: translate(-120%, 50%);
+  @keyframes hero-double-slashes {
+    to {
+      transform: translate(-120%, 50%);
+    }
   }
 }
 
@@ -96,26 +97,83 @@
   Services
 *****************************************/
 
-.services {
+// Needs to be a div adjacent to the content and not a wrapper because
+// of the masking
+.services-background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background: linear-gradient(to right, rgb(56 189 248 / 29%), rgb(216 32 174 / 26%));
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 5%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.services-logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(10vw + 1200px);
+  transform: translate(55%, -28%) rotate(-62.3deg);
+}
+@supports (animation-timeline: --mask-container) {
   .services-logo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: calc(10vw + 1200px);
-    transform: translate(52%, -26%) rotate(-62.3deg);
+    transform: translate(57%, -28%) rotate(-62.3deg);
+    animation: ease-out services-logo forwards;
+    animation-timeline: --mask-container;
+    animation-range: 30% 50%;
+  }
+  @keyframes services-logo {
+    to {
+      transform: translate(55%, -28%) rotate(-62.3deg);
+    }
   }
 }
 
-.glimmer-text {
+.services-dashboard {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+
+  right: 0;
+  bottom: 0;
+  background: url('/images/dashboard.png');
+
+  -webkit-mask-image: linear-gradient(to right, rgba(255, 255, 255, 10%), rgba(255, 255, 255, 1) 100%);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* z-index: -2; */
+  /* opacity: 0.7; */
+  transform: rotateX(19deg) rotateY(325deg) rotateZ(8deg) translate(30%, 40%);
+}
+@supports (animation-timeline: --mask-container) {
+  .services-dashboard {
+    transform: rotateX(19deg) rotateY(300deg) rotateZ(8deg) translate(30%, 45%);
+    animation: ease-out services-dashboard forwards;
+    animation-timeline: --mask-container;
+    animation-range: 30% 50%;
+  }
+  @keyframes services-dashboard {
+    to {
+      transform: rotateX(19deg) rotateY(325deg) rotateZ(8deg) translate(30%, 40%);
+    }
+  }
+}
+
+.services-glimmer-text {
   font-size: calc(1rem + 4vw);
 
   background: linear-gradient(
     130deg,
-    var(--themeBlack) 0,
-    var(--themeBlack) 45%,
-    var(--themeGradient) 55%,
-    var(--themeBlack) 56%,
-    var(--themeBlack) 100%
+    var(--themeGradient-1),
+    var(--themeGradient-2),
+    var(--themeGradient-3),
+    theme('colors.sky[400]')
   );
   background-repeat: no-repeat;
   background-size: 500% 100%;
@@ -125,16 +183,14 @@
 }
 
 @supports (animation-timeline: --mask-container) {
-  .glimmer-text {
-    /* transform: translateY(20px); */
-    animation: linear glimmer-text forwards;
+  .services-glimmer-text {
+    animation: linear services-glimmer-text forwards;
     animation-timeline: --mask-container;
-    animation-range: 30% 80%;
+    animation-range: 45% 60%;
   }
-  @keyframes glimmer-text {
+  @keyframes services-glimmer-text {
     to {
       background-position: 100% 0;
-      /* transform: translateY(0); */
     }
   }
 }

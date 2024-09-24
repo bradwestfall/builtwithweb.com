@@ -3,6 +3,7 @@ import { NavLink } from '@remix-run/react'
 
 import { Logo } from '~/components/Logo'
 import { Slashes } from '~/components/Slashes'
+import { Typewriter } from '~/components/Typewriter'
 
 export default function Index() {
   return (
@@ -16,7 +17,7 @@ export default function Index() {
 
         <div className="section-mask text-white">
           <div className="section-mask-inner">
-            <nav className="primary-nav text-lg absolute top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
+            <nav className="primary-nav">
               <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-inherit">
                 Home
               </NavLink>
@@ -55,33 +56,36 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="services mask-root absolute z-[9] inset-0 h-[150vh] md:h-[190vh] overflow-clip">
+      <section className="services mask-root absolute z-[8] inset-0 h-[170vh] md:h-[200vh] overflow-clip text-white">
         <div className="sticky viewport-container flex flex-col">
-          <nav className="glimmer-border-mask absolute text-lg top-[10px] left-[10px] right-[10px] mx-auto w-fit md:left-auto">
+          <nav className="z-[10000] primary-nav primary-nav-glimmer">
             <div className="nav-wrap">
-              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
+              <NavLink to="/" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
                 Home
               </NavLink>
-              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
+              <NavLink to="/a" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
                 Services
               </NavLink>
-              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
+              <NavLink to="/b" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
                 Blog
               </NavLink>
-              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-theme-black">
+              <NavLink to="/c" className="inline-block px-3 py-2 sm:px-6 sm:py-3 text-current">
                 Contact
               </NavLink>
             </div>
           </nav>
 
-          <div className="section-mask bg-white">
-            <div className="section-mask-inner">
-              <div className="services-logo text-theme-black">
+          <div className="section-mask bg-black">
+            <div className="section-mask-inner pl-10 flex flex-col [perspective:800px]">
+              <div className="services-dashboard" />
+              <div className="services-background" />
+
+              <div className="services-logo text-current">
                 <Logo fill />
               </div>
+
               <div className="flex-1 flex flex-col justify-between max-w-[900px] overflow-y-scroll">
-                {/* <div className="glimmer-text absolute top-16 lg:-top-5 left-0 max-w-[800px]"> */}
-                <div className="glimmer-text leading-none mt-16">
+                <div className="services-glimmer-text leading-none mt-16">
                   <span className="text-nowrap leading-none">Web Apps</span>
                   <p className="pt-[0.2em] text-[0.5em] lg:text-[0.32em] leading-normal">
                     Your project deserves experience and quality. My experience building web sites goes back 20 years
@@ -89,8 +93,26 @@ export default function Index() {
                   </p>
                 </div>
 
-                {/* <div className="absolute bottom-5 left-1 right-1 md:right-auto md:w-[calc(40vw+200px)] xl:text-xl flex gap-10 md:gap-4 max-md:flex-col"> */}
-                <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col mb-5">
+                <div className="h-36">
+                  <button className="button-glow">
+                    <span data-glow />
+                    More on Services
+                  </button>
+
+                  <br />
+                  <br />
+                  <br />
+
+                  <span className="text-xl opacity-15">
+                    $ npm install{' '}
+                    <Typewriter
+                      list={['react', 'react-router-dom', 'vite', 'remix', 'zod', 'typescript', 'tailwind']}
+                    />
+                    <span className="inline-block h-[1em] w-[0.6em] border translate-y-1 [translate-x: 8em]" />
+                  </span>
+                </div>
+
+                {/* <div className="xl:text-xl flex gap-10 md:gap-4 max-md:flex-col mb-10">
                   <ServiceCard label="Design">
                     Capture your audience with beautiful, accessible, amazing designs. It's the first impression that
                     counts.
@@ -100,14 +122,14 @@ export default function Index() {
                     Level up your team with expert knowledge. I've taught some of the biggest tech companies JavaScript,
                     React, and CSS.
                   </ServiceCard>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="next mask-root absolute z-[8] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
+      <section className="next mask-root absolute z-[7] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
         <div className="sticky viewport-container ">Hello</div>
       </section>
     </>
@@ -117,15 +139,15 @@ export default function Index() {
 function ServiceCard({ children, label }: { children: React.ReactNode; label: string }) {
   // Left Side
   const before =
-    'before:w-[0.3em] before:absolute before:bottom-0 before:left-0 before:top-[1.9em] before:bg-theme-black before:rounded'
+    'before:w-[0.3em] before:absolute before:bottom-0 before:left-0 before:top-[1.9em] before:bg-current before:rounded'
   // Top
   const after =
-    'after:h-[0.3em] after:absolute after:top-0 after:left-[6em] md:after:left-[8em] after:-right-0 after:bg-theme-black after:rounded'
+    'after:h-[0.3em] after:absolute after:top-0 after:left-[6em] md:after:left-[8em] after:-right-0 after:bg-current after:rounded'
 
   return (
     <div className="flex-1 flex relative">
       <div className="-translate-y-[0.4em] text-[1.4em] md:text-[2em] absolute leading-none">{label}</div>
-      <div className={`border-b-[0.3em] border-r-[0.3em] border-theme-black overflow-clip ${before} ${after}`}>
+      <div className={`border-b-[0.3em] border-r-[0.3em] border-current overflow-clip ${before} ${after}`}>
         <p className="p-[1.2em] pt-[1.8em] text-[1em]">{children}</p>
       </div>
     </div>
