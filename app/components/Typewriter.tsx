@@ -27,7 +27,7 @@ export function Typewriter({ list, paused = false, min = 100, max = 150 }: Props
       if (direction === 1 && textPosition - 1 === text.length) {
         setTimeout(() => {
           setDirection(-1)
-        }, latency * 2)
+        }, latency * 5)
       } else if (direction === -1 && textPosition === -1) {
         setTimeout(() => {
           setDirection(1)
@@ -35,13 +35,12 @@ export function Typewriter({ list, paused = false, min = 100, max = 150 }: Props
         }, latency * 2)
       } else {
         setTimeout(() => {
-          console.log('main')
           setDisplayText(text.substring(0, textPosition))
           setTextPosition(textPosition + direction)
         }, latency)
       }
     }
-  }, [direction, nextInList, paused, text, textPosition])
+  }, [direction, max, min, nextInList, paused, text, textPosition])
 
   return <>{displayText}</>
 }

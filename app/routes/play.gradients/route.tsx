@@ -1,3 +1,4 @@
+import { TechLogos } from '~/components/TechLogos'
 import './styles.css'
 
 export default function Page() {

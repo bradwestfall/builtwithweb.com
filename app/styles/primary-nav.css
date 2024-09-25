@@ -68,7 +68,7 @@
   .primary-nav-glimmer::before {
     animation: linear primary-nav-glimmer forwards;
     animation-timeline: --mask-container;
-    animation-range: 30% 90%;
+    animation-range: 40% 90%;
   }
 }
 @keyframes primary-nav-glimmer {

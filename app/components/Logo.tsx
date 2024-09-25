@@ -17,7 +17,7 @@ export function Logo({ stroke, fill }: Props) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <title>BUILT WITH WEB</title>
-      <g id="Page-1" stroke="none" fill={fill ? 'currentColor' : 'transparent'} fillRule="evenodd">
+      <g stroke="none" fill={fill ? 'currentColor' : 'transparent'} fillRule="evenodd">
         <g transform="translate(3, 3)" strokeWidth="1" fillRule="nonzero" stroke={stroke ? 'currentColor' : undefined}>
           <g id="BUILT" strokeWidth={stroke ? '3' : undefined}>
             <path d="M298.2,0 C327.6,0 342.3,12.4 342.3,37.2 L342.3,61.8 C342.3,79.2 337.5,90.5 327.9,95.7 C333.5,98.1 337.3,101.75 339.3,106.65 C341.3,111.55 342.3,118.2 342.3,126.6 L342.3,155.4 C342.3,180.2 327.6,192.6 298.2,192.6 L210,192.6 L209.999,83.785 L151.340426,193 L87,193 L194.234043,0 L298.2,0 Z M283.2,113.4 L261.6,113.4 L261.6,158.1 L283.2,158.1 C288.2,158.1 290.7,155.9 290.7,151.5 L290.7,120 C290.7,115.6 288.2,113.4 283.2,113.4 Z M283.2,34.5 L261.6,34.5 L261.6,78.9 L283.2,78.9 C288.2,78.9 290.7,76.7 290.7,72.3 L290.7,41.1 C290.7,36.7 288.2,34.5 283.2,34.5 Z"></path>

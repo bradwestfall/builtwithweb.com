@@ -25,6 +25,7 @@
   Border Glow
 *****************************************/
 
+// https://www.youtube.com/watch?v=-VOUK-xFAyk&t=345s
 @property --border-glow-angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -57,7 +58,7 @@
     );
     transition: all 0.2s;
     z-index: -1;
-    animation: border-glow-angle-rotate 20s linear infinite;
+    animation: border-glow-angle-rotate 10s linear infinite;
   }
 
   &.fire::before,
@@ -108,3 +109,7 @@
     opacity: 0.5;
   }
 } */
+
+.svg-shadow svg {
+  filter: drop-shadow(0 0 3px black) drop-shadow(0 0 20px black);
+}

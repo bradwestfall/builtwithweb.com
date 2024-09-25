@@ -19,15 +19,15 @@
 @supports (animation-timeline: --mask-container) {
   .section-mask {
     position: fixed;
-    width: 5000px;
-    height: 5000px;
+    width: 200vw;
+    height: 200vw;
     pointer-events: auto;
     // The percentage determines the angle of the clip
-    clip-path: polygon(0 0, 153% 0, 100% 100%, 0% 100%);
+    clip-path: ellipse(200vmax 200vmax at 75% 0%);
     animation: linear section-mask-animation forwards;
-    animation-duration: 1ms;
+    animation-duration: 1ms; // FF
     animation-timeline: --mask-container;
-    animation-range: 20%;
+    animation-range: 30%;
 
     // Adjust for accomodating display: flex (without animation timeline support it was absolute)
     > .section-mask-inner {
@@ -39,8 +39,7 @@
   }
   @keyframes section-mask-animation {
     to {
-      // top-right X needs to be 100% less than previous for angle to be consistent
-      clip-path: polygon(0 0, 53% 0, 0 100%, 0% 100%);
+      clip-path: ellipse(100px 100px at 50% -50vh);
     }
   }
 }
@@ -97,14 +96,13 @@
   Services
 *****************************************/
 
-// Needs to be a div adjacent to the content and not a wrapper because
-// of the masking
+// Needs to be a div adjacent to the content and not a wrapper because of the masking
 .services-background {
   position: absolute;
   z-index: -1;
   inset: 0;
 
-  background: linear-gradient(to right, rgb(56 189 248 / 29%), rgb(216 32 174 / 12%));
+  background: linear-gradient(100deg, rgb(216 32 174 / 20%), rgb(56 189 248 / 40%));
   -webkit-mask-image: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 5%,
@@ -113,56 +111,21 @@
   );
 }
 
-.services-logo {
-  display: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: calc(10vw + 1200px);
-  transform: translate(55%, -28%) rotate(-62.3deg);
-}
-@supports (animation-timeline: --mask-container) {
-  .services-logo {
-    transform: translate(57%, -28%) rotate(-62.3deg);
-    animation: ease-out services-logo forwards;
-    animation-timeline: --mask-container;
-    animation-range: 30% 50%;
-  }
-  @keyframes services-logo {
-    to {
-      transform: translate(55%, -28%) rotate(-62.3deg);
-    }
-  }
-}
+.services-content {
+  display: grid;
+  grid-template:
+    'love'
+    'logos'
+    'npm'
+    'cta'
+    / 1fr;
 
-.services-dashboard {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-
-  right: 0;
-  bottom: 0;
-  background: url('/images/dashboard.png');
-
-  -webkit-mask-image: linear-gradient(to right, rgba(255, 255, 255, 10%), rgba(255, 255, 255, 1) 100%);
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* z-index: -2; */
-  /* opacity: 0.7; */
-  transform: rotateX(19deg) rotateY(325deg) rotateZ(8deg) translate(30%, 40%);
-}
-@supports (animation-timeline: --mask-container) {
-  .services-dashboard {
-    transform: rotateX(19deg) rotateY(300deg) rotateZ(8deg) translate(30%, 45%);
-    animation: ease-out services-dashboard forwards;
-    animation-timeline: --mask-container;
-    animation-range: 30% 50%;
-  }
-  @keyframes services-dashboard {
-    to {
-      transform: rotateX(19deg) rotateY(325deg) rotateZ(8deg) translate(30%, 40%);
-    }
+  @media (min-width: 900px) {
+    grid-template:
+      'love logos'
+      'npm  logos'
+      'cta  logos'
+      / 500px 1fr;
   }
 }
 
@@ -186,12 +149,11 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 @supports (animation-timeline: --mask-container) {
   .services-glimmer-text {
     animation: linear services-glimmer-text forwards;
     animation-timeline: --mask-container;
-    animation-range: 45% 60%;
+    animation-range: 0% 90%;
   }
   @keyframes services-glimmer-text {
     to {
@@ -205,12 +167,18 @@
 *****************************************/
 
 .next {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     58.2deg,
     rgba(40, 91, 212, 0.73) -3%,
     rgba(171, 53, 163, 0.45) 49.3%,
     rgba(255, 204, 112, 0.37) 97.7%
-  );
+  ); */
+}
+
+.next {
+  .viewport-container {
+    background: linear-gradient(to right, theme('colors.sky.900'), theme('colors.sky.400'));
+  }
 }
 
 /*

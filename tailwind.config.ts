@@ -14,6 +14,9 @@ export default {
         'theme-gradient-4': '#d820ae',
         'theme-gradient-5': '#8d2274',
       },
+      fontSize: {
+        '2xs': '0.65rem',
+      },
       fontFamily: {
         brush: ['Brush', 'sans-serif'],
       },
