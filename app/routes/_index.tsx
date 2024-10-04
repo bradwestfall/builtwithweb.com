@@ -39,7 +39,7 @@ export default function Index() {
               <PrimaryNavLinks />
             </nav>
 
-            <div className="absolute left-4 right-4 top-52 space-y-5 text-4xl text-center md:top-32 lg:text-[4rem] lg:text-left lg:top-36 lg:left-[400px] lg:right-[5vw] 2xl:text-[6rem] 2xl:left-[600px]">
+            <div className="absolute left-4 right-4 top-52 space-y-5 text-4xl text-center md:top-32 lg:text-[5rem] lg:text-left lg:top-36 lg:left-[400px] lg:right-[5vw] xl:text-[6rem] 2xl:text-[6rem] 2xl:left-[600px]">
               <h1 className="leading-[0.9] font-bold">
                 Let's Build
                 <br />
@@ -63,16 +63,16 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="services mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[180vh] overflow-clip text-white">
+      <section className="section-stacks mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[180vh] overflow-clip text-white">
         <div className="sticky viewport-container flex flex-col">
           <nav className="z-10 primary-nav primary-nav-glimmer">
             <PrimaryNavLinks />
           </nav>
 
           <div className="section-mask">
-            <div className="section-mask-inner services-content pt-20 pb-6 px-6 xl:pt-10 xl:px-10">
+            <div className="section-mask-inner section-stacks-content pt-20 pb-6 px-6 xl:pt-10 xl:px-10">
               {/* .. */}
-              <div className="services-heading [grid-area:services-heading]">
+              <div className="section-stacks-heading [grid-area:section-stacks-heading]">
                 <div className="leading-[0.9] tracking-wide">
                   <div className="font-superLineLine text-sky-200/60">Full Stack</div>
                   <div className="font-superLine text-sky-950">Web Apps</div>
@@ -84,7 +84,7 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="[grid-area:services-stack] xl:pt-20">
+              <div className="[grid-area:section-stacks-logos] xl:pt-20">
                 <p className="pt-[0.2em] text-center text-2xl !leading-[1.5em] md:text-left xl:text-3xl">
                   My goal is to assist with your project with the highest degree of quality and craftsmanship.
                 </p>
@@ -96,7 +96,7 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="[grid-area:services-cta] xl:self-end mt-6">
+              <div className="[grid-area:section-stacks-cta] xl:self-end mt-6">
                 <div className="flex gap-3 max-md:flex-col md:gap-6">
                   <button className="button-shape border-glow fireXX">My Experience</button>
                   <button className="button-shape border-glow">

@@ -94,7 +94,7 @@
 }
 
 /****************************************
-  Services
+  Section: Stacks
 *****************************************/
 
 /* .section-mask {
@@ -111,30 +111,30 @@
     rgba(255, 255, 255, 0)
     ); */
 
-.services-content {
+.section-stacks-content {
   background: linear-gradient(to right, theme('colors.sky.600'), theme('colors.cyan.500'));
   z-index: 1;
 
   @screen xl {
     display: grid;
     grid-template:
-      'services-heading services-stack'
-      'services-cta services-stack'
+      'section-stacks-heading section-stacks-logos'
+      'section-stacks-cta     section-stacks-logos'
       / 45vw 1fr;
   }
 }
 
-.services-heading > div {
+.section-stacks-heading > div {
   perspective: 800px;
 }
-.services-heading .font-superLineLine,
-.services-heading .font-superLine {
+.section-stacks-heading .font-superLineLine,
+.section-stacks-heading .font-superLine {
   display: none;
 }
 
 @screen lg {
-  .services-heading .font-superLineLine,
-  .services-heading .font-superLine {
+  .section-stacks-heading .font-superLineLine,
+  .section-stacks-heading .font-superLine {
     display: inline-block;
     font-size: calc(6vw + 1em);
     transform: rotateX(-80deg);
@@ -142,28 +142,28 @@
   }
 }
 @screen xl {
-  .services-heading .font-superLineLine,
-  .services-heading .font-superLine {
+  .section-stacks-heading .font-superLineLine,
+  .section-stacks-heading .font-superLine {
     display: block;
     font-size: calc(25vw - 7em);
   }
 }
 
 @supports (animation-timeline: --mask-container) {
-  .services-heading .font-superLineLine,
-  .services-heading .font-superLine {
-    animation: ease-out services-stand-up forwards;
+  .section-stacks-heading .font-superLineLine,
+  .section-stacks-heading .font-superLine {
+    animation: ease-out section-stacks-stand-up forwards;
     animation-timeline: --mask-container;
     animation-range: 50% 70%;
   }
-  @keyframes services-stand-up {
+  @keyframes section-stacks-stand-up {
     100% {
       transform: rotateX(0);
     }
   }
 }
 
-/* .services-glimmer-text {
+/* .section-stacks-glimmer-text {
   h1 {
     font-size: calc(1rem + 4vw);
   }
@@ -184,7 +184,7 @@
   -webkit-text-fill-color: transparent;
 }
 @supports (animation-timeline: --mask-container) {
-  .services-glimmer-text {
+  .section-stacks-glimmer-text {
     animation: linear services-glimmer-text forwards;
     animation-timeline: --mask-container;
     animation-range: 0% 90%;
