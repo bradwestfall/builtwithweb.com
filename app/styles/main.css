@@ -2,8 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import './fonts';
 @import './reset';
 @import './common';
 @import './buttons';
 @import './primary-nav';
+
+// Pages
 @import './home';

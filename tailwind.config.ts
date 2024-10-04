@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'theme-black': colors.stone['900'],
+        'theme-black': colors.stone[900],
+        'theme-blue': colors.sky[500],
         'theme-gradient-1': '#ffd652',
         'theme-gradient-2': '#ff7160',
         'theme-gradient-3': '#fe488b',
@@ -19,6 +20,8 @@ export default {
       },
       fontFamily: {
         brush: ['Brush', 'sans-serif'],
+        superLine: ['superlineregular'],
+        superLineLine: ['superlineline'],
       },
     },
   },

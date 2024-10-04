@@ -46,12 +46,12 @@ export default function Index() {
                 <span className="font-brush font-light inline-block scale-150 -translate-y-3 text-fuchsia-900">
                   Fantastic
                 </span>{' '}
-                Websites
+                Web Apps
               </h1>
               <p className="text-[0.6em] leading-tight">
-                Professional web apps{' '}
+                Beautiful{' '}
                 <span className="text-nowrap">
-                  <span className="font-brush text-fuchsia-900 inline-block scale-150">&</span> beautiful sites
+                  <span className="font-brush text-fuchsia-900 inline-block scale-150">&</span> modern
                 </span>
               </p>
             </div>
@@ -63,55 +63,69 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="services mask-root absolute z-[8] inset-0 h-[200vh] lg:h-[180vh] overflow-clip text-white">
+      <section className="services mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[180vh] overflow-clip text-white">
         <div className="sticky viewport-container flex flex-col">
           <nav className="z-10 primary-nav primary-nav-glimmer">
             <PrimaryNavLinks />
           </nav>
 
-          <div className="section-mask bg-black">
-            <div className="section-mask-inner px-3 md:px-12 pt-20 pb-12 flex flex-col">
-              <div className="services-background" />
-
-              <div className="flex-1 flex flex-col">
-                <div className="services-glimmer-text leading-none max-w-[900px]">
-                  <h1 className="text-nowrap leading-none">Building Web Apps</h1>
-                  <p className="pt-[0.2em] text-justify text-lg md:text-left md:text-3xl leading-normal">
-                    Whether you need hands-on development or guidance, my goal is to assist your project with the
-                    highest degree of quality and craftsmanship.
-                  </p>
+          <div className="section-mask">
+            <div className="section-mask-inner services-content pt-20 pb-6 px-6 xl:pt-10 xl:px-10">
+              {/* .. */}
+              <div className="services-heading [grid-area:services-heading]">
+                <div className="leading-[0.9] tracking-wide">
+                  <div className="font-superLineLine text-sky-200/60">Full Stack</div>
+                  <div className="font-superLine text-sky-950">Web Apps</div>
                 </div>
+                <div className="[grid-area:npm] hidden lg:block text-white/40 font-mono">
+                  $ npm install{' '}
+                  <Typewriter list={['react', 'react-router-dom', 'vite', 'remix', 'zod', 'typescript', 'tailwind']} />
+                  <span className="inline-block h-[1em] w-[0.6em] border [translate:3px_3px]" />
+                </div>
+              </div>
 
-                <div className="services-content mt-10 space-y-7">
-                  <p className="[grid-area:love] font-brush text-4xl lg:text-[4em] leading-none text-theme-gradient-3 [word-spacing:0.2em]">
-                    Tech I love to use
-                  </p>
+              <div className="[grid-area:services-stack] xl:pt-20">
+                <p className="pt-[0.2em] text-center text-2xl !leading-[1.5em] md:text-left xl:text-3xl">
+                  My goal is to assist with your project with the highest degree of quality and craftsmanship.
+                </p>
+                <div className="font-brush mt-8 text-4xl xl:text-[3em] leading-none [word-spacing:0.2em]">
+                  <p className="text-sky-950 text-center lg:text-left">favorite tech stacks</p>
+                </div>
+                <div className="mt-4">
+                  <TechLogos />
+                </div>
+              </div>
+
+              <div className="[grid-area:services-cta] xl:self-end mt-6">
+                <div className="flex gap-3 max-md:flex-col md:gap-6">
+                  <button className="button-shape border-glow fireXX">My Experience</button>
+                  <button className="button-shape border-glow">
+                    Consulting{' '}
+                    <span className="text-lg text-sky-950 font-semibold" aria-label="and">
+                      &
+                    </span>{' '}
+                    Training
+                  </button>
+                </div>
+              </div>
+
+              {/* <div className="[grid-area:love] font-brush text-4xl lg:text-[4em] leading-none [word-spacing:0.2em]">
+                    <p className="text-theme-gradient-3">My favorite tech stacks</p>
+                    <p className="text-theme-blue">I also teach workshops</p>
+                  </div>
 
                   <div className="[grid-area:logos]">
                     <TechLogos />
-                  </div>
+                  </div> */}
 
-                  <span className="[grid-area:npm] hidden lg:block text-slate-500/80 font-mono">
+              {/* <span className="[grid-area:npm] hidden lg:block text-slate-500/80 font-mono">
                     $ npm install{' '}
                     <Typewriter
                       paused
                       list={['react', 'react-router-dom', 'vite', 'remix', 'zod', 'typescript', 'tailwind']}
                     />
                     <span className="inline-block h-[1em] w-[0.6em] border [translate:3px_3px]" />
-                  </span>
-
-                  <div className="[grid-area:cta] flex gap-3 max-md:flex-col md:gap-6">
-                    <button className="button-shape border-glow fire">My Experience</button>
-                    <button className="button-shape border-glow">
-                      Consulting{' '}
-                      <span className="text-lg text-sky-500" aria-label="and">
-                        &
-                      </span>{' '}
-                      Training
-                    </button>
-                  </div>
-                </div>
-              </div>
+                  </span> */}
             </div>
           </div>
         </div>

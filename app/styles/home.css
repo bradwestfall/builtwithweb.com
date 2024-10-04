@@ -80,6 +80,7 @@
 
 @supports (animation-timeline: --mask-container) {
   .hero-double-slashes {
+    transform-origin: center left;
     position: fixed;
     animation: linear hero-double-slashes forwards;
     animation-timeline: --mask-container;
@@ -96,40 +97,73 @@
   Services
 *****************************************/
 
-// Needs to be a div adjacent to the content and not a wrapper because of the masking
-.services-background {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
+/* .section-mask {
+  background-image: linear-gradient(300deg, var(--themeGradient));
+} */
 
-  background: linear-gradient(100deg, rgb(216 32 174 / 20%), rgb(56 189 248 / 40%));
-  -webkit-mask-image: linear-gradient(
+// Needs to be a div adjacent to the content and not a wrapper because of the masking
+
+/* background: linear-gradient(100deg, rgb(216 32 174 / 20%), rgb(56 189 248 / 40%)); */
+/* -webkit-mask-image: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 5%,
     rgba(255, 255, 255, 0) 80%,
     rgba(255, 255, 255, 0)
-  );
-}
+    ); */
 
 .services-content {
-  display: grid;
-  grid-template:
-    'love'
-    'logos'
-    'npm'
-    'cta'
-    / 1fr;
+  background: linear-gradient(to right, theme('colors.sky.600'), theme('colors.cyan.500'));
+  z-index: 1;
 
-  @media (min-width: 900px) {
+  @screen xl {
+    display: grid;
     grid-template:
-      'love logos'
-      'npm  logos'
-      'cta  logos'
-      / 500px 1fr;
+      'services-heading services-stack'
+      'services-cta services-stack'
+      / 45vw 1fr;
   }
 }
 
-.services-glimmer-text {
+.services-heading > div {
+  perspective: 800px;
+}
+.services-heading .font-superLineLine,
+.services-heading .font-superLine {
+  display: none;
+}
+
+@screen lg {
+  .services-heading .font-superLineLine,
+  .services-heading .font-superLine {
+    display: inline-block;
+    font-size: calc(6vw + 1em);
+    transform: rotateX(-80deg);
+    transform-origin: center bottom;
+  }
+}
+@screen xl {
+  .services-heading .font-superLineLine,
+  .services-heading .font-superLine {
+    display: block;
+    font-size: calc(25vw - 7em);
+  }
+}
+
+@supports (animation-timeline: --mask-container) {
+  .services-heading .font-superLineLine,
+  .services-heading .font-superLine {
+    animation: ease-out services-stand-up forwards;
+    animation-timeline: --mask-container;
+    animation-range: 50% 70%;
+  }
+  @keyframes services-stand-up {
+    100% {
+      transform: rotateX(0);
+    }
+  }
+}
+
+/* .services-glimmer-text {
   h1 {
     font-size: calc(1rem + 4vw);
   }
@@ -160,7 +194,7 @@
       background-position: 100% 0;
     }
   }
-}
+} */
 
 /****************************************
   Next section
@@ -177,7 +211,9 @@
 
 .next {
   .viewport-container {
-    background: linear-gradient(to right, theme('colors.sky.900'), theme('colors.sky.400'));
+    /* background-image: linear-gradient(130deg, theme('colors.stone.950'), theme('colors.sky.950')); */
+    background-image: linear-gradient(130deg, #edeff1, #e7e9ec);
+    /* background-image: linear-gradient(135deg in oklab, oklch(55% 0.45 350) 0%, oklch(95% 0.4 95) 103% 103%); */
   }
 }
 

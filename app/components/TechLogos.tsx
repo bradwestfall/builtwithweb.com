@@ -6,7 +6,7 @@ type TechLogoWrapProps = {
 function TechLogoWrap({ children, className, ...props }: TechLogoWrapProps) {
   return (
     <div className="inline-block align-middle">
-      <div {...props} className={`${className} flex mx-[1em] my-[0.9em] axxlign-middle svg-shadow`}>
+      <div {...props} className={`${className} flex mx-[1em] my-[0.9em] svg-shadowXXX`}>
         {children}
       </div>
     </div>
@@ -15,7 +15,7 @@ function TechLogoWrap({ children, className, ...props }: TechLogoWrapProps) {
 
 export function TechLogos() {
   return (
-    <div className="text-white/90 text-2xs lg:text-lg text-4xl -mx-[1.2em]  text-justify lg:text-left">
+    <div className="text-white/90 text-2xs lg:text-base -mx-[1.2em] text-justify lg:text-left">
       <TechLogoWrap className="h-[1.4em]" aria-label="TypeScript">
         <LogoTypeScript />
       </TechLogoWrap>

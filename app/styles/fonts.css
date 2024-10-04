@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Brush;
+  src: url('/fonts/RolleteQakuVector-Regular.otf') format('opentype');
+
+  /* src: url('/fonts/Creslina/Creslina.woff2') format('woff2'), url('/fonts/Creslina/Creslina.woff') format('woff'),
+    url('/fonts/Creslina/Creslina.ttf') format('truetype'),
+    url('/fonts/Creslina/Creslina.eot') format('embedded-opentype'); */
+}
+
+@font-face {
+  font-family: 'superlineline_italic';
+  src: url('/fonts/Superline/superline-lineitalic-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-lineitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'superlineoutline';
+  src: url('/fonts/Superline/superline-outline-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-outline-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'superlineoutline_italic';
+  src: url('/fonts/Superline/superline-outlineitalic-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-outlineitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'superlineregular';
+  src: url('/fonts/Superline/superline-regular-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'superlineitalic';
+  src: url('/fonts/Superline/superline-italic-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'superlineline';
+  src: url('/fonts/Superline/superline-line-webfont.woff2') format('woff2'),
+    url('/fonts/Superline/superline-line-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

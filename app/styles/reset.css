@@ -1,12 +1,3 @@
-@font-face {
-  font-family: Brush;
-  src: url('/fonts/RolleteQakuVector-Regular.otf') format('opentype');
-
-  /* src: url('/fonts/Creslina/Creslina.woff2') format('woff2'), url('/fonts/Creslina/Creslina.woff') format('woff'),
-    url('/fonts/Creslina/Creslina.ttf') format('truetype'),
-    url('/fonts/Creslina/Creslina.eot') format('embedded-opentype'); */
-}
-
 :root {
   --themeBlack: theme('colors.stone.900');
   --themeBlue: theme('colors.sky.500');

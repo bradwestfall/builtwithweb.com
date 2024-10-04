@@ -5,5 +5,5 @@
 .button-shape {
   padding: 0.4rem 1.4rem;
   border-radius: 0.3rem;
-  background-color: theme('colors.slate[950]'); // var(--themeBlack);
+  background-color: theme('colors.sky.500'); // var(--themeBlack);
 }

@@ -50,8 +50,8 @@
     130deg,
     transparent 0%,
     transparent 45%,
-    theme('colors.theme-gradient-1') 50%,
-    theme('colors.theme-gradient-4') 60%,
+    theme('colors.sky.900') 50%,
+    theme('colors.sky.300') 60%,
     transparent 65%,
     transparent 100%
   );
