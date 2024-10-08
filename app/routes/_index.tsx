@@ -1,4 +1,5 @@
 import { NavLink } from '@remix-run/react'
+import { Brands, ScrollBrands } from '~/components/Brands'
 import { Logo } from '~/components/Logo'
 import { Slashes } from '~/components/Slashes'
 import { TechLogos } from '~/components/TechLogos'
@@ -49,9 +50,9 @@ export default function Index() {
                 Web Apps
               </h1>
               <p className="text-[0.6em] leading-tight">
-                Beautiful{' '}
+                Modern{' '}
                 <span className="text-nowrap">
-                  <span className="font-brush text-fuchsia-900 inline-block scale-150">&</span> modern
+                  <span className="font-brush text-fuchsia-900 inline-block scale-150">&</span> Beautiful
                 </span>
               </p>
             </div>
@@ -65,7 +66,7 @@ export default function Index() {
 
       <section className="section-stacks mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[180vh] overflow-clip text-white">
         <div className="sticky viewport-container flex flex-col">
-          <nav className="z-10 primary-nav primary-nav-glimmer">
+          <nav className="z-10 primary-nav primary-nav-glimmer text-sky-950">
             <PrimaryNavLinks />
           </nav>
 
@@ -86,10 +87,10 @@ export default function Index() {
 
               <div className="[grid-area:section-stacks-logos] xl:pt-20">
                 <p className="pt-[0.2em] text-center text-2xl !leading-[1.5em] md:text-left xl:text-3xl">
-                  My goal is to assist with your project with the highest degree of quality and craftsmanship.
+                  My name is Brad Westfall, and I've been building websites and web apps since 1999.
                 </p>
-                <div className="font-brush mt-8 text-4xl xl:text-[3em] leading-none [word-spacing:0.2em]">
-                  <p className="text-sky-950 text-center lg:text-left">favorite tech stacks</p>
+                <div className="font-brush mt-8 text-4xl xl:text-[4em] leading-none [word-spacing:0.2em]">
+                  <p className="text-sky-950 text-center lg:text-left">My current favorite tech</p>
                 </div>
                 <div className="mt-4">
                   <TechLogos />
@@ -108,31 +109,44 @@ export default function Index() {
                   </button>
                 </div>
               </div>
-
-              {/* <div className="[grid-area:love] font-brush text-4xl lg:text-[4em] leading-none [word-spacing:0.2em]">
-                    <p className="text-theme-gradient-3">My favorite tech stacks</p>
-                    <p className="text-theme-blue">I also teach workshops</p>
-                  </div>
-
-                  <div className="[grid-area:logos]">
-                    <TechLogos />
-                  </div> */}
-
-              {/* <span className="[grid-area:npm] hidden lg:block text-slate-500/80 font-mono">
-                    $ npm install{' '}
-                    <Typewriter
-                      paused
-                      list={['react', 'react-router-dom', 'vite', 'remix', 'zod', 'typescript', 'tailwind']}
-                    />
-                    <span className="inline-block h-[1em] w-[0.6em] border [translate:3px_3px]" />
-                  </span> */}
+              {/* .. */}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="next mask-root absolute z-[7] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
-        <div className="sticky viewport-container">hi</div>
+      <section className="section-clients mask-root absolute z-[7] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
+        <div className="sticky viewport-container">
+          {/* .. */}
+          <div className="section-clients-content">
+            <div>
+              <div className="section-clients-logos pt-36 space-y-12 text-[2rem] text-slate-400 translate-x-48">
+                <div className="font-brush text-theme-gradient-4 text-[5em] absolute z-10">Workshops!</div>
+                <ScrollBrands group={1} />
+                <ScrollBrands group={2} />
+                <ScrollBrands group={3} />
+                <ScrollBrands group={1} style={{ '--delay': '-25s' }} />
+                <ScrollBrands group={2} style={{ '--delay': '-25s' }} />
+                <ScrollBrands group={3} style={{ '--delay': '-25s' }} />
+                {/* <div className="font-superLine text-slate-400 absolute bottom-0 right-0 text-[13em] hover:right-80 transition-all duration-1000">
+                  Java
+                  <span className="font-superLineLine">Script</span>
+                </div> */}
+              </div>
+
+              {/* <div className="section-clients-glass">
+                <div>
+                  <p className="text-xl">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nemo assumenda obcaecati dolorem amet
+                    fugiat veniam, quidem quisquam tempore eaque ullam reiciendis dolor. Molestiae aliquid id porro
+                    maiores laborum! Voluptatem!
+                  </p>
+                </div>
+              </div> */}
+            </div>
+          </div>
+          {/* .. */}
+        </div>
       </section>
     </>
   )

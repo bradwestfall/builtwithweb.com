@@ -45,7 +45,7 @@
 }
 
 /****************************************
-  Hero
+  Section: Hero
 *****************************************/
 
 .hero {
@@ -197,75 +197,54 @@
 } */
 
 /****************************************
-  Next section
+  Section: Clients
 *****************************************/
 
-.next {
-  /* background-image: linear-gradient(
-    58.2deg,
-    rgba(40, 91, 212, 0.73) -3%,
-    rgba(171, 53, 163, 0.45) 49.3%,
-    rgba(255, 204, 112, 0.37) 97.7%
-  ); */
-}
+.section-clients {
+  --gray1: #edeff1;
+  --gray2: #e7e9ec;
 
-.next {
   .viewport-container {
     /* background-image: linear-gradient(130deg, theme('colors.stone.950'), theme('colors.sky.950')); */
-    background-image: linear-gradient(130deg, #edeff1, #e7e9ec);
+    background-image: linear-gradient(130deg, var(--gray1), var(--gray2));
     /* background-image: linear-gradient(135deg in oklab, oklch(55% 0.45 350) 0%, oklch(95% 0.4 95) 103% 103%); */
   }
 }
 
-/*
-
-this is the circle mask trick from early ideas
-@keyframes bg-shrink {
-  to {
-    clip-path: circle(300%);
+.section-clients-content {
+  perspective: 350px;
+  transform: translate(250px, 300px);
+  > div {
+    transform: rotateY(20deg) translate(120px, -150px);
+    position: relative;
   }
-}
 
-.section-two {
-  height: 100vh;
-  background: #000;
-  clip-path: circle(0%);
-  animation: bg-shrink linear;
-  animation-timeline: scroll(block root);
-  animation-duration: 2s;
-}
-
-*/
-
-/* @keyframes slide-left {
-  to {
-    transform: translateX(-200px);
+  .section-clients-logos {
+    /* background-color: theme('colors.slate.300'); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90vh;
   }
-}
+  /* .section-clients-glass {
+    display: none;
+    transform: rotateY(-5deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 90vh;
+    border-bottom-right-radius: 5vw;
 
-.slide-left {
-  animation: slide-left linear;
-  animation-timeline: scroll(block root);
-  animation-duration: 5s;
-}
+    background-image: linear-gradient(130deg, transparent, theme('colors.slate.300/10'));
+    backdrop-filter: blur(8px);
 
-@keyframes slide-right {
-  to {
-    transform: translateX(200px);
-  }
+    > div {
+      position: absolute;
+      bottom: 2em;
+      right: 2em;
+      left: 8em;
+    }
+  } */
 }
-
-.slide-right {
-  animation: slide-right linear;
-  animation-timeline: scroll(block root);
-  animation-duration: 5s;
-}
-
-.neumorphic-box {
-  background: linear-gradient(145deg, #fefefe, #d5d5d5);
-  box-shadow: 20px 20px 60px #c9c9c9, -20px -20px 60px #ffffff;
-}
-
-.neumorphic-box-inset {
-  box-shadow: inset 20px 20px 60px #c9c9c9, inset -20px -20px 60px #ffffff;
-} */
