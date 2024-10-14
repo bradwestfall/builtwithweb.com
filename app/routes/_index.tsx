@@ -1,5 +1,5 @@
 import { NavLink } from '@remix-run/react'
-import { Brands, ScrollBrands } from '~/components/Brands'
+import { Brands, BrandsGroupOne, ScrollBrands } from '~/components/Brands'
 import { Logo } from '~/components/Logo'
 import { Slashes } from '~/components/Slashes'
 import { TechLogos } from '~/components/TechLogos'
@@ -116,35 +116,30 @@ export default function Index() {
       </section>
 
       <section className="section-clients mask-root absolute z-[7] inset-0 h-[290vh] md:h-[290vh] overflow-clip">
-        <div className="sticky viewport-container">
+        <div className="sticky viewport-container overflow-hidden">
           {/* .. */}
-          <div className="section-clients-content">
-            <div>
-              <div className="section-clients-logos pt-36 space-y-12 text-[2rem] text-slate-400 translate-x-48">
-                <div className="font-brush text-theme-gradient-4 text-[5em] absolute z-10">Workshops!</div>
-                <ScrollBrands group={1} />
-                <ScrollBrands group={2} />
-                <ScrollBrands group={3} />
-                <ScrollBrands group={1} style={{ '--delay': '-25s' }} />
-                <ScrollBrands group={2} style={{ '--delay': '-25s' }} />
-                <ScrollBrands group={3} style={{ '--delay': '-25s' }} />
-                {/* <div className="font-superLine text-slate-400 absolute bottom-0 right-0 text-[13em] hover:right-80 transition-all duration-1000">
-                  Java
-                  <span className="font-superLineLine">Script</span>
-                </div> */}
-              </div>
+          {/* <div className="absolute -top-4 left-8 font-brush text-[9em] ">
+            <span className="font-superLine text-sky-950">React</span>
+            <span className="font-superLineLine text-sky-800/50">Workshops</span>
+          </div> */}
 
-              {/* <div className="section-clients-glass">
-                <div>
-                  <p className="text-xl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, nemo assumenda obcaecati dolorem amet
-                    fugiat veniam, quidem quisquam tempore eaque ullam reiciendis dolor. Molestiae aliquid id porro
-                    maiores laborum! Voluptatem!
-                  </p>
-                </div>
-              </div> */}
+          <div className="section-clients-content">
+            <div className="absolute bottom-8 right-8 left-8 top-28 text-3xl text-slate-500 leading-relaxed">
+              Teaching approximant 5000 developers how to improve their React Projects taught me a lot about...
             </div>
           </div>
+
+          <div className="section-clients-logos text-[1.5rem] text-slate-400">
+            <div className="space-y-6">
+              <ScrollBrands group={1} />
+              <ScrollBrands group={2} />
+              <ScrollBrands group={3} />
+              <ScrollBrands group={1} style={{ '--delay': '-25s' }} />
+              <ScrollBrands group={2} style={{ '--delay': '-30s' }} />
+              <ScrollBrands group={3} style={{ '--delay': '-35s' }} />
+            </div>
+          </div>
+
           {/* .. */}
         </div>
       </section>
