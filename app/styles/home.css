@@ -205,7 +205,6 @@
   --gray2: #e7e9ec;
 
   .viewport-container {
-    /* background-image: linear-gradient(130deg, theme('colors.stone.950'), theme('colors.sky.950')); */
     background-image: linear-gradient(130deg, var(--gray1), var(--gray2));
     /* background-image: linear-gradient(135deg in oklab, oklch(55% 0.45 350) 0%, oklch(95% 0.4 95) 103% 103%); */
   }
@@ -213,44 +212,45 @@
 
 .section-clients-content {
   position: absolute;
-  bottom: 0;
+  top: 5vh;
   left: 0;
   width: 50vw;
-  height: 500px;
+  height: 100vh;
+}
 
-  // Glass
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    left: -2em;
-    right: 0;
-    top: 0;
-    bottom: -20vh;
-    display: block;
-    border-top: 1px solid #e5e8edc4;
-    border-right: 1px solid #e5e8ede3;
-    background: linear-gradient(to bottom, #d1deed6a, var(--transparent));
-    backdrop-filter: blur(5px);
-    transform: skew(0, 12deg) translate(1em, 0);
-    border-radius: 5em;
-    border-top-left-radius: 0;
-    box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.3);
-  }
+// Glass
+.section-clients-content::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -2em;
+  right: 0;
+  top: 0;
+  bottom: -20vh;
+  display: block;
+  border-top: 1px solid #e5eaedc4;
+  border-right: 1px solid #e5e8ede3;
+  background: linear-gradient(to bottom, #81ace1aa, var(--transparent));
+  backdrop-filter: blur(5px);
+  transform: skew(0, 12deg) translate(1em, 0);
+  border-radius: 5em;
+  border-top-left-radius: 0;
+  box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.3);
+}
 
-  &::after {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    right: 0;
-    transform: skew(0, 12deg);
-    top: 1em;
-    bottom: -100px; // offset for slant
-    background: linear-gradient(to bottom, #fff, #fff 50%, var(--gray2));
-    border-radius: 4em;
-    border-top-left-radius: 0;
-  }
+.section-clients-content::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: skew(0, 12deg);
+  top: 1em;
+  bottom: -100px; // offset for slant
+  background: linear-gradient(to bottom, #fff, #fff 50%, var(--gray2));
+
+  border-radius: 4em;
+  border-top-left-radius: 0;
 }
 
 //////////// Logos Perspective
@@ -276,8 +276,8 @@
   display: flex;
   flex-wrap: nowrap;
   gap: var(--gap);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 100%);
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 80%);
+  /* -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 100%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 80%); */
 }
 
 .scroll-brands > div {
@@ -288,9 +288,15 @@
   flex-wrap: nowrap;
   gap: var(--gap);
   min-width: content; // 100%
-  /* animation: slide 50s linear infinite; */
-  animation: slide 120s linear infinite;
-  animation-delay: var(--delay);
+
+  /* animation: slide 120s linear infinite;
+  animation-delay: var(--delay); */
+
+  /* animation-delay: var(--delay); */
+
+  animation: slide linear;
+  animation-timeline: --mask-container;
+  animation-range: 0% 100%;
 }
 
 @keyframes slide {
@@ -298,6 +304,7 @@
     transform: translateX(calc(var(--gap) * -1));
   }
   100% {
-    transform: translateX(calc(-100% - var(--gap) * 2));
+    /* transform: translateX(calc(-30% - var(--gap) * 2)); */
+    transform: translateX(calc(var(--speed, -30%) - var(--gap) * 2));
   }
 }
