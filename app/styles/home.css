@@ -264,7 +264,7 @@
   perspective: 850px;
 
   > div {
-    transform: rotateY(30deg);
+    transform: rotateY(50deg);
     position: relative;
   }
 }
@@ -291,8 +291,6 @@
 
   /* animation: slide 120s linear infinite;
   animation-delay: var(--delay); */
-
-  /* animation-delay: var(--delay); */
 
   animation: slide linear;
   animation-timeline: --mask-container;
