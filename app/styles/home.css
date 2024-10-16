@@ -97,20 +97,6 @@
   Section: Stacks
 *****************************************/
 
-/* .section-mask {
-  background-image: linear-gradient(300deg, var(--themeGradient));
-} */
-
-// Needs to be a div adjacent to the content and not a wrapper because of the masking
-
-/* background: linear-gradient(100deg, rgb(216 32 174 / 20%), rgb(56 189 248 / 40%)); */
-/* -webkit-mask-image: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 1) 5%,
-    rgba(255, 255, 255, 0) 80%,
-    rgba(255, 255, 255, 0)
-    ); */
-
 .section-stacks-content {
   background: linear-gradient(to right, theme('colors.sky.600'), theme('colors.cyan.500'));
   z-index: 1;
@@ -200,21 +186,6 @@
   Section: Clients
 *****************************************/
 
-.section-clients {
-  --gray1: #edeff19e;
-  --gray2: #e7e9ec;
-
-  .viewport-container {
-    /* background-image: linear-gradient(
-      130deg,
-      theme('colors.slate.400'),
-      theme('colors.sky.50'),
-      theme('colors.slate.50')
-    ); */
-    /* background-image: linear-gradient(135deg in oklab, oklch(55% 0.45 350) 0%, oklch(95% 0.4 95) 103% 103%); */
-  }
-}
-
 .section-clients-content {
   background-image: linear-gradient(
     130deg,
@@ -254,17 +225,29 @@
 
 .section-clients-slant-box::after {
   content: '';
-  z-index: 2;
+  z-index: 4;
   position: absolute;
   left: 0;
   right: 0;
   transform: skew(0, 12deg);
   top: 1em;
   bottom: -100px; // offset for slant
-  background: linear-gradient(to bottom, #fff, #fff 50%, var(--gray2));
+  background: linear-gradient(to bottom, #fff, #fff 50%, theme('colors.slate.50'));
 
   border-radius: 4em;
   border-top-left-radius: 0;
+}
+
+.section-clients-slide-content {
+  animation: section-clients-slide-content linear;
+  animation-timeline: --mask-container;
+  animation-range: 0% 100%;
+}
+
+@keyframes section-clients-slide-content {
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 //////////// Logos Perspective
