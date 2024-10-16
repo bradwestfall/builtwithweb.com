@@ -205,18 +205,28 @@
   --gray2: #e7e9ec;
 
   .viewport-container {
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
       130deg,
       theme('colors.slate.400'),
       theme('colors.sky.50'),
       theme('colors.slate.50')
-    );
+    ); */
     /* background-image: linear-gradient(135deg in oklab, oklch(55% 0.45 350) 0%, oklch(95% 0.4 95) 103% 103%); */
   }
 }
 
 .section-clients-content {
+  background-image: linear-gradient(
+    130deg,
+    theme('colors.slate.400'),
+    theme('colors.sky.50'),
+    theme('colors.slate.50')
+  );
+}
+
+.section-clients-slant-box {
   position: absolute;
+  z-index: 4;
   top: 5vh;
   left: 0;
   width: 50vw;
@@ -224,10 +234,10 @@
 }
 
 // Glass
-.section-clients-content::before {
+.section-clients-slant-box::before {
   content: '';
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   left: -2em;
   right: 0;
   top: 0;
@@ -235,17 +245,16 @@
   display: block;
   border-top: 1px solid #e5eaedc4;
   border-right: 1px solid #e5e8ede3;
-  background: linear-gradient(to bottom, #81ace1aa, var(--transparent));
-  backdrop-filter: blur(5px);
+  background: #d0dcea51;
   transform: skew(0, 12deg) translate(1em, 0);
   border-radius: 5em;
   border-top-left-radius: 0;
-  box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.3); */
 }
 
-.section-clients-content::after {
+.section-clients-slant-box::after {
   content: '';
-  z-index: -1;
+  z-index: 2;
   position: absolute;
   left: 0;
   right: 0;
@@ -262,7 +271,7 @@
 
 .section-clients-logos {
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   bottom: 0em;
   left: 35vw;
   right: -40vw;
