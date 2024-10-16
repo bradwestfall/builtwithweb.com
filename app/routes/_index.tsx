@@ -115,39 +115,24 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="section-clients mask-root absolute z-[7] inset-0 h-[500vh]">
+      <section className="section-clients mask-root absolute z-[7] inset-0 h-[400vh]">
         <div className="sticky viewport-container">
           {/* .. */}
           <div className="section-mask">
             <div className="section-mask-inner section-clients-content">
               {/* .. */}
               <div className="section-clients-slant-box">
-                <div className="absolute bottom-8 right-8 left-8 top-16 z-10">
-                  {/* .. */}
-                  <div className="section-clients-slide-content">
-                    <h1 className="text-[9em] text-slate-600 font-superLine">Workshops</h1>
-                    <h2 className="text-[4em] text-sky-400 font-brush -mt-20">Teaching react to amazing teams</h2>
-                    <p className="text-3xl text-sky-800 leading-relaxed">
-                      I've had the privilege to teach approximately 5000 developers how to make their React and
-                      JavaScript projects better through workshops at{' '}
-                      <a href="https://reacttraining.com">ReactTraining.com</a>
-                    </p>
-                  </div>
-
-                  <div className="section-clients-slide-content">
-                    <h1 className="text-[9em] text-slate-600 font-superLine">Workshops</h1>
-                    <h2 className="text-[4em] text-sky-400 font-brush -mt-20">Teaching react to amazing teams</h2>
-                    <p className="text-3xl text-sky-800 leading-relaxed">
-                      I've had the privilege to teach approximately 5000 developers how to make their React and
-                      JavaScript projects better through workshops at{' '}
-                      <a href="https://reacttraining.com">ReactTraining.com</a>
-                    </p>
-                  </div>
-                  {/* .. */}
+                <div className="absolute bottom-12 right-12 left-12 top-16 z-10">
+                  <h1 className="text-[9em] text-sky-950 font-superLine">Workshops</h1>
+                  <h2 className="text-[4em] text-sky-400 font-brush -mt-20">Teaching react to amazing teams</h2>
+                  <p className="text-3xl text-sky-800 leading-relaxed">
+                    I've had the privilege to teach approximately 5000 developers how to make their React and JavaScript
+                    projects better through workshops at <a href="https://reacttraining.com">ReactTraining.com</a>
+                  </p>
                 </div>
               </div>
 
-              <div className="section-clients-logos text-[1.8rem] text-slate-400">
+              <div className="section-clients-logos text-[1.5rem] text-slate-400">
                 <div className="space-y-6">
                   <ScrollBrands group={1} style={{ '--speed': '-32%' }} />
                   <ScrollBrands group={2} style={{ '--speed': '-30%' }} />
@@ -171,8 +156,8 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="section-next mask-root absolute z-[6] inset-0 h-[600vh] overflow-clip">
-        <div className="sticky viewport-container flex flex-col bg-white">
+      <section className="section-next mask-root absolute z-[6] inset-0 h-[500vh] overflow-clip">
+        <div className="sticky viewport-container flex flex-col bg-slate-950">
           <div className="section-mask">
             <div className="section-mask-inner section-next-content pt-20 pb-6 px-6 xl:pt-10 xl:px-10">
               {/* .. */}

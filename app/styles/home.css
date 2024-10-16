@@ -198,55 +198,22 @@
 .section-clients-slant-box {
   position: absolute;
   z-index: 4;
-  top: 5vh;
   left: 0;
-  width: 50vw;
+
+  bottom: -10em;
+
+  width: 65vw;
   height: 100vh;
-}
+  overflow: clip;
 
-// Glass
-.section-clients-slant-box::before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  left: -2em;
-  right: 0;
-  top: 0;
-  bottom: -20vh;
-  display: block;
-  border-top: 1px solid #e5eaedc4;
-  border-right: 1px solid #e5e8ede3;
-  background: #d0dcea51;
-  transform: skew(0, 12deg) translate(1em, 0);
-  border-radius: 5em;
-  border-top-left-radius: 0;
-  /* box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.3); */
-}
-
-.section-clients-slant-box::after {
-  content: '';
-  z-index: 4;
-  position: absolute;
-  left: 0;
-  right: 0;
   transform: skew(0, 12deg);
-  top: 1em;
-  bottom: -100px; // offset for slant
-  background: linear-gradient(to bottom, #fff, #fff 50%, theme('colors.slate.50'));
-
+  background: linear-gradient(130deg, theme('colors.slate.100'), #fff, theme('colors.slate.100'));
   border-radius: 4em;
   border-top-left-radius: 0;
-}
+  box-shadow: 0 0 0px 15px #b1bcc986;
 
-.section-clients-slide-content {
-  animation: section-clients-slide-content linear;
-  animation-timeline: --mask-container;
-  animation-range: 0% 100%;
-}
-
-@keyframes section-clients-slide-content {
-  to {
-    transform: translateY(-100%);
+  > div {
+    transform: skew(0, -12deg);
   }
 }
 
