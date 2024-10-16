@@ -134,8 +134,15 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="section-clients-logos text-[1.3rem] text-slate-400">
+          <div className="section-clients-logos text-[1.8rem] text-slate-400">
             <div className="space-y-6">
+              <ScrollBrands group={1} style={{ '--speed': '-32%' }} />
+              <ScrollBrands group={2} style={{ '--speed': '-30%' }} />
+              <ScrollBrands group={3} style={{ '--speed': '-28%' }} />
+              <ScrollBrands group={4} style={{ '--speed': '-26%' }} />
+              <ScrollBrands group={5} style={{ '--speed': '-24%' }} />
+              <ScrollBrands group={6} style={{ '--speed': '-22%' }} />
+
               <ScrollBrands group={1} style={{ '--speed': '-20%' }} />
               <ScrollBrands group={2} style={{ '--speed': '-18%' }} />
               <ScrollBrands group={3} style={{ '--speed': '-16%' }} />

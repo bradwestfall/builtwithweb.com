@@ -36,7 +36,7 @@ export function BrandsGroupOne() {
       <Brand name="microsoft" width={5} />
       <Brand name="mozilla" />
       <Brand name="netflix" />
-      <Brand name="pixar" width={5} />
+      <Brand name="navy" />
       <Brand name="salesforce" scale={1.5} />
       <Brand name="shopify" />
       <Brand name="godaddy" />
@@ -58,9 +58,9 @@ export function BrandsGroupTwo() {
       <Brand name="walmart" width={5} />
       <Brand name="new-york-times" width={5} />
       <Brand name="adobe" />
-      <Brand name="american-express" width={1} />
+      <Brand name="american-express" width={1} scale={1.5} />
       <Brand name="match-com" />
-      <Brand name="navy" />
+      <Brand name="pixar" width={5} />
       <Brand name="twitch" width={2} />
       <Brand name="usaa" width={1} />
       <Brand name="virginia-tech" />
@@ -115,7 +115,7 @@ export function BrandsGroupFive() {
       <Brand name="logitech" />
       <Brand name="berkeley" />
       <Brand name="hp" width={1} />
-      <Brand name="american-express" width={1} />
+      <Brand name="american-express" width={1} scale={1.5} />
       <Brand name="shopify" />
       <Brand name="usaf" width={2} />
       <Brand name="mozilla" />
