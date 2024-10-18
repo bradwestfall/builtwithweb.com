@@ -123,8 +123,6 @@
   .section-stacks-heading .font-superLine {
     display: inline-block;
     font-size: calc(6vw + 1em);
-    transform: rotateX(-80deg);
-    transform-origin: center bottom;
   }
 }
 @screen xl {
@@ -142,6 +140,14 @@
     animation-timeline: --mask-container;
     animation-range: 50% 70%;
   }
+  @screen lg {
+    .section-stacks-heading .font-superLineLine,
+    .section-stacks-heading .font-superLine {
+      transform: rotateX(-80deg);
+      transform-origin: center bottom;
+    }
+  }
+
   @keyframes section-stacks-stand-up {
     100% {
       transform: rotateX(0);
@@ -199,7 +205,6 @@
   position: absolute;
   z-index: 4;
   left: 0;
-
   bottom: -10em;
 
   width: 65vw;
@@ -215,6 +220,10 @@
   > div {
     transform: skew(0, -12deg);
   }
+
+  h1 {
+    font-size: calc(20vw - 7em);
+  }
 }
 
 //////////// Logos Perspective
@@ -228,8 +237,7 @@
   perspective: 850px;
 
   > div {
-    transform: rotateY(20deg);
-    position: relative;
+    transform: rotateY(10deg);
   }
 }
 
@@ -240,33 +248,30 @@
   display: flex;
   flex-wrap: nowrap;
   gap: var(--gap);
-  /* -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 100%);
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 35%, #000 80%); */
 }
 
 .scroll-brands > div {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
   flex-wrap: nowrap;
   gap: var(--gap);
   min-width: content; // 100%
-
-  /* animation: slide 120s linear infinite;
-  animation-delay: var(--delay); */
-
-  animation: slide linear;
-  animation-timeline: --mask-container;
-  animation-range: 0% 100%;
 }
 
-@keyframes slide {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
+  .scroll-brands > div {
+    animation: scroll-brands linear;
+    animation-timeline: --mask-container;
+    animation-range: 0% 100%;
+  }
+}
+
+@keyframes scroll-brands {
   0% {
     transform: translateX(calc(var(--gap) * -1));
   }
   100% {
-    /* transform: translateX(calc(-30% - var(--gap) * 2)); */
     transform: translateX(calc(var(--speed, -30%) - var(--gap) * 2));
   }
 }

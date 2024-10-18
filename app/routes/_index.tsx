@@ -64,7 +64,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="section-stacks mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[180vh] text-white">
+      <section className="section-stacks mask-root absolute z-[8] inset-0 h-[210vh] lg:h-[200vh] text-white">
         <div className="sticky viewport-container flex flex-col">
           <nav className="z-10 primary-nav primary-nav-glimmer text-sky-950">
             <PrimaryNavLinks />
@@ -115,15 +115,15 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="section-training mask-root absolute z-[7] inset-0 h-[400vh]">
+      <section className="section-training mask-root absolute z-[7] inset-0 h-[350vh]">
         <div className="sticky viewport-container">
           {/* .. */}
           <div className="section-mask">
-            <div className="section-mask-inner section-training-content">
+            <div className="section-mask-inner section-training-content overflow-clip">
               {/* .. */}
               <div className="section-training-slant-box">
-                <div className="absolute bottom-12 right-12 left-12 top-16 z-10">
-                  <h1 className="text-[9em] text-sky-950 font-superLine">Workshops</h1>
+                <div className="absolute bottom-12 right-12 left-12 top-8 z-10">
+                  <h1 className="text-sky-950 font-superLine">Workshops</h1>
                   <h2 className="text-[4em] text-sky-400 font-brush -mt-20">Teaching react to amazing teams</h2>
                   <p className="text-3xl text-sky-800 leading-relaxed">
                     I've had the privilege to teach approximately 5000 developers how to make their React and JavaScript
