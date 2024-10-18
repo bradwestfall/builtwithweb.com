@@ -18,7 +18,7 @@
   }
 }
 
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   @media (max-width: 768px) {
     .hero .primary-nav {
       transform: translateY(400%);
@@ -64,7 +64,7 @@
   mask-composite: exclude;
 }
 
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   .primary-nav-glimmer::before {
     animation: linear primary-nav-glimmer forwards;
     animation-timeline: --mask-container;

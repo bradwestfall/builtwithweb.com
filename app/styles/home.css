@@ -16,7 +16,7 @@
   height: calc(100vh - var(--border) - var(--border));
 }
 
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   .section-mask {
     position: fixed;
     width: 200vw;
@@ -78,7 +78,7 @@
   }
 }
 
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   .hero-double-slashes {
     transform-origin: center left;
     position: fixed;
@@ -135,7 +135,7 @@
   }
 }
 
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   .section-stacks-heading .font-superLineLine,
   .section-stacks-heading .font-superLine {
     animation: ease-out section-stacks-stand-up forwards;
@@ -169,7 +169,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@supports (animation-timeline: --mask-container) {
+@supports (animation-timeline: --mask-container) and (animation-range: 0%) {
   .section-stacks-glimmer-text {
     animation: linear services-glimmer-text forwards;
     animation-timeline: --mask-container;
@@ -183,10 +183,10 @@
 } */
 
 /****************************************
-  Section: Clients
+  Section: React Training
 *****************************************/
 
-.section-clients-content {
+.section-training-content {
   background-image: linear-gradient(
     130deg,
     theme('colors.slate.400'),
@@ -195,7 +195,7 @@
   );
 }
 
-.section-clients-slant-box {
+.section-training-slant-box {
   position: absolute;
   z-index: 4;
   left: 0;
@@ -219,7 +219,7 @@
 
 //////////// Logos Perspective
 
-.section-clients-logos {
+.section-training-logos {
   position: absolute;
   z-index: 0;
   bottom: 0em;
