@@ -30,7 +30,7 @@ export default function Index() {
       <div className="main-border" aria-hidden />
 
       <section className="hero mask-root viewport-container absolute z-[10]">
-        <div className="text-white w-32 absolute z-20 top-7 mx-auto left-7 right-7 md:right-auto">
+        <div className="text-white w-[200px] absolute z-20 top-[2em] mx-auto left-[2em] right-[2em] md:right-auto">
           <Logo fill />
         </div>
 
@@ -121,19 +121,17 @@ export default function Index() {
           <div className="section-mask">
             <div className="section-mask-inner section-training-content overflow-clip">
               {/* .. */}
-              <div className="section-training-slant-box">
-                <div className="absolute bottom-12 right-12 left-12 top-8 z-10">
-                  <h1 className="text-sky-950 font-superLine">Workshops</h1>
-                  <h2 className="text-[4em] text-sky-400 font-brush -mt-20">Teaching react to amazing teams</h2>
-                  <p className="text-3xl text-sky-800 leading-relaxed">
-                    I've had the privilege to teach approximately 5000 developers how to make their React and JavaScript
-                    projects better through workshops at <a href="https://reacttraining.com">ReactTraining.com</a>
-                  </p>
-                </div>
+              <div className="section-training-workshops absolute left-12 -top-4 w-[40vw]">
+                <h1 className="text-white font-superLineLine">Workshops</h1>
+                <h2 className="text-[4em] text-sky-600 font-brush -mt-20">Teaching react to amazing teams</h2>
+                <p className="text-3xl text-sky-800 leading-relaxed">
+                  I've had the privilege to teach approximately 5000 developers how to make their React and JavaScript
+                  projects better through workshops at <a href="https://reacttraining.com">ReactTraining.com</a>
+                </p>
               </div>
 
-              <div className="section-training-logos text-[1.5rem] text-slate-400">
-                <div className="space-y-6">
+              <div className="section-training-logos text-slate-500">
+                <div className="space-y-6 text-[1.5rem]">
                   <ScrollBrands group={1} style={{ '--speed': '-32%' }} />
                   <ScrollBrands group={2} style={{ '--speed': '-30%' }} />
                   <ScrollBrands group={3} style={{ '--speed': '-28%' }} />
@@ -157,11 +155,13 @@ export default function Index() {
       </section>
 
       <section className="section-next mask-root absolute z-[6] inset-0 h-[500vh] overflow-clip">
-        <div className="sticky viewport-container flex flex-col bg-slate-950">
+        <div className="sticky viewport-container flex flex-col bg-white">
           <div className="section-mask">
             <div className="section-mask-inner section-next-content pt-20 pb-6 px-6 xl:pt-10 xl:px-10">
               {/* .. */}
-              stuffff
+              <div className="text-black w-[200px] absolute z-20 top-[2em] mx-auto left-[2em] right-[2em] md:right-auto">
+                <Logo fill />
+              </div>
               {/* .. */}
             </div>
           </div>
